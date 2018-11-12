@@ -1,0 +1,65 @@
+//
+//== General
+//
+$font-family-body: 'Open Sans', sans-serif;
+$font-family-title: Oswald, sans-serif;
+$font-family-subtitle: Montserrat, sans-serif;
+$font-family-quote: Georgia, Verdana, Raleway, Serif;
+
+//
+//== Colors
+//
+$color-bg: #ffffff !default;
+$color-brand: #29aafe !default;
+
+$color-gray-dark: #373a3c !default;
+$color-gray: #55595c !default;
+$color-gray-light: #818a91 !default;
+$color-gray-lighter: #bbbbbb !default;
+$color-gray-lightest: #eceeef !default;
+
+$color-purple: #d498e9 !default;
+$color-orange: #ebb35e !default;
+$color-blue: #5bb7ed !default;
+$color-red: #f27374 !default;
+
+$color-primary: $color-brand !default;
+$color-success: #7ec855 !default;
+$color-info: #5bb7ed !default;
+$color-warning: #ebb35e !default;
+$color-danger: #ef4d42 !default;
+$color-dark: #000000 !default;
+$color-white: #ffffff !default;
+
+$bg-dark: #161b1f !default;
+$bg-dark-light: #32333a !default;
+$bg-dark-lighter: #46474d !default;
+$bg-dark-lightest: #69696a !default;
+$bg-gray: #f0f0f0 !default;
+$bg-gray-light: #f8f9fb !default;
+$bg-gray-lighter: #fafafa !default;
+$bg-gray-lightest: #fdfdfd !default;
+$bg-blue: #89c1e4 !default;
+$bg-orange: #fe7c60 !default;
+$bg-red: #fc6c6c !default;
+$bg-purple: #968eee !default;
+$bg-green: #5fd79a !default;
+
+$color-text: #7e8890 !default;
+$color-text-alt: #eeeeee !default;
+$color-title: #453c34 !default;
+$color-subtitle: #96a2b2 !default;
+$color-subtitle-light: #c8d0d7 !default;
+
+$color-hr: #bbbbbb !default;
+$color-hr-alt: #46474d !default;
+
+$color-border: #eeeeee !default;
+
+$color-nav-link: #9da7ad !default;
+$color-star-full: #ffd700 !default;
+$color-star-empty: #dddddd !default;
+
+// Form controls
+$color-input-border: #dfe5e7 !default;
+$color-input-bg: #fcfcfc !default;

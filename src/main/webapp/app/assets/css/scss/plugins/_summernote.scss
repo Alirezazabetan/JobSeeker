@@ -1,0 +1,48 @@
+.note-editor {
+    &.note-frame {
+        border-color: $color-input-border;
+        border-radius: 0;
+    }
+
+    .btn {
+        background-color: #fff;
+        color: $color-text;
+        border-color: $color-border;
+        padding-left: 12px;
+        padding-right: 12px;
+        height: 34px;
+        line-height: 34px;
+
+        &:hover,
+        &:focus {
+            background-color: $color-gray-lightest;
+            color: $color-text;
+            border-color: $color-border;
+        }
+    }
+
+    .btn-group.open .dropdown-toggle {
+        box-shadow: none;
+    }
+
+    .btn.active,
+    .btn:active,
+    .btn-default.active,
+    .btn-default:active,
+    .btn-default:hover,
+    .open > .dropdown-toggle.btn-default {
+        background-color: $color-gray-lightest;
+        color: $color-text;
+        border-color: darken($color-border, 5%);
+        box-shadow: none;
+    }
+
+    .panel-heading {
+        border-color: $color-input-border;
+    }
+}
+
+.note-popover .popover-content .note-para .dropdown-menu,
+.panel-heading.note-toolbar .note-para .dropdown-menu {
+    min-width: 246px;
+}

@@ -1,0 +1,26 @@
+
+{
+    "jobAngularApp": {
+        "certification" : {
+            "home": {
+                "title": "Certifications",
+                "createLabel": "Create a new Certification",
+                "createOrEditLabel": "Create or edit a Certification"
+            },
+            "created": "A new Certification is created with identifier {{ param }}",
+            "updated": "A Certification is updated with identifier {{ param }}",
+            "deleted": "A Certification is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Certification {{ id }}?"
+            },
+            "detail": {
+                "title": "Certification"
+            },
+            "name": "Name",
+            "certificationAuthority": "Certification Authority",
+            "licenseNumber": "License Number",
+            "startDate": "Start Date",
+            "endDate": "End Date"
+        }
+    }
+}

@@ -1,0 +1,520 @@
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $color-gray-lighter !important;
+}
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color-gray-lighter !important;
+}
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $color-gray-lighter !important;
+}
+
+label {
+    font-weight: 400;
+    font-size: 14px;
+    color: $color-gray-light;
+}
+
+.form-control {
+    background-color: $color-input-bg;
+    color: $color-gray-light;
+    border-radius: 0;
+    border-color: $color-input-border;
+    font-size: 15px;
+    padding-left: 14px;
+    padding-right: 14px;
+    height: 44px;
+    line-height: 44px;
+    box-shadow: none;
+    transition: border-color 0.2s linear, background-color 0.2s linear;
+
+    &:focus,
+    &.focus {
+        outline: 0;
+        box-shadow: none;
+        border-color: darken($color-input-border, 13%);
+        background-color: darken($color-input-bg, 1%);
+    }
+
+    &[readonly]:focus,
+    &[disabled]:focus {
+        background-color: #eee !important;
+    }
+}
+
+.help-block {
+    color: lighten($color-gray-light, 20%);
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.btn-group.open .dropdown-toggle {
+    box-shadow: none;
+}
+
+.open > .dropdown-toggle.btn-default,
+.open > .dropdown-toggle.btn-default:focus {
+    color: $color-gray-light;
+    border-color: darken($color-input-border, 13%);
+    background-color: darken($color-input-bg, 1%);
+}
+
+.input-group-addon {
+    color: lighten($color-gray-light, 10%);
+    border-color: $color-input-border;
+    background-color: $color-gray-lightest;
+    min-width: 40px;
+}
+
+.input-group .form-control {
+    &:focus,
+    &.focus {
+        border-color: $color-input-border;
+        background-color: darken($color-input-bg, 2%);
+    }
+}
+
+select.form-control {
+    &:focus,
+    &.focus {
+        background-color: #fff;
+    }
+}
+
+textarea.form-control {
+    line-height: 28px;
+}
+
+.input-sm {
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+}
+
+.input-lg {
+    height: 52px;
+    line-height: 52px;
+    font-size: 16px;
+}
+
+.input-group-sm {
+    .form-control,
+    .input-group-addon,
+    .input-group-btn > .btn {
+        height: 36px;
+        font-size: 14px;
+        line-height: 36px;
+        border-radius: 0px;
+    }
+
+    .input-group-addon {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 34px;
+        line-height: 34px;
+    }
+}
+
+.input-group-lg {
+    .form-control,
+    .input-group-addon,
+    .input-group-btn > .btn {
+        height: 52px;
+        font-size: 16px;
+        line-height: 52px;
+        border-radius: 0px;
+    }
+
+    .input-group-addon {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 50px;
+        line-height: 50px;
+    }
+}
+
+form .text-muted {
+    margin-bottom: 0;
+}
+
+.highlighted-block {
+    padding: 20px;
+    background-color: $bg-gray-lighter;
+}
+
+//
+// Upload button
+//
+.upload-button {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    input[type='file'] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        font-size: 0px;
+        line-height: 44px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 3;
+    }
+}
+
+.upload-button-block {
+    display: block;
+}
+
+//
+// Upload group
+//
+.upload-group input[type='file'] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0px;
+    line-height: 44px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 3;
+}
+
+//
+// Modified checkbox and radio
+//
+.checkbox,
+.radio {
+    padding-left: 20px;
+
+    label {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        padding-left: 8px;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            width: 17px;
+            height: 17px;
+            top: 5px;
+            left: 0;
+            margin-left: -20px;
+            border: 1px solid $color-input-border;
+            border-radius: 0;
+            background-color: #fff;
+            transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+        }
+
+        &::after {
+            display: inline-block;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            left: 0;
+            top: 0;
+            margin-left: -20px;
+            padding-left: 3px;
+            padding-top: 1px;
+            font-size: 11px;
+            color: $color-input-bg;
+        }
+
+        small {
+            padding-left: 5px;
+            color: $color-gray-lighter;
+        }
+    }
+}
+
+.checkbox {
+    input[type='checkbox'],
+    input[type='radio'] {
+        opacity: 0;
+        z-index: 1;
+
+        &:checked + label::after {
+            font-family: 'FontAwesome';
+            content: '\f00c';
+            color: #fff;
+        }
+
+        &:checked + label::before {
+            background-color: $color-brand;
+            border-color: $color-brand;
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+            &::before {
+                cursor: not-allowed;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &.checkbox-inline {
+        margin-top: 0;
+    }
+}
+
+.radio {
+    label {
+        &::before {
+            border-radius: 50%;
+            transition: border 0.15s ease-in-out;
+        }
+
+        &::after {
+            content: ' ';
+            width: 11px;
+            height: 11px;
+            left: 3px;
+            top: 8px;
+            padding-left: 0;
+            padding-top: 0;
+            border-radius: 50%;
+            background-color: $color-input-bg;
+            transform: scale(0, 0);
+            transition: transform 0.1s cubic-bezier(0.8, -0.33, 0.2, 1.33);
+        }
+    }
+
+    input[type='radio'] {
+        opacity: 0;
+        z-index: 1;
+
+        + label::after {
+            background-color: $color-brand;
+        }
+
+        &:checked + label {
+            &::after {
+                transform: scale(1, 1);
+                background-color: $color-brand;
+            }
+            &::before {
+                border-color: $color-brand;
+            }
+        }
+
+        &:disabled + label {
+            opacity: 0.65;
+            &::before {
+                cursor: not-allowed;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &.radio-inline {
+        margin-top: 0;
+    }
+}
+
+//
+// Subscribe form
+//
+.form-subscribe {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .form-control {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding-left: 24px;
+        padding-right: 24px;
+        letter-spacing: 1px;
+        border: none;
+        border-top-left-radius: 36px;
+        border-bottom-left-radius: 36px;
+
+        &:focus,
+        &.focus {
+            z-index: 2;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    .btn {
+        border-top-right-radius: 36px;
+        border-bottom-right-radius: 36px;
+    }
+}
+
+//
+// Header job search
+//
+.header-job-search {
+    margin-top: 50px;
+
+    .input-keyword,
+    .input-location,
+    .btn-search {
+        display: inline-block;
+        float: left;
+    }
+
+    .input-keyword,
+    .input-location {
+        position: relative;
+        width: 40%;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            left: 20px;
+            font-family: 'themify';
+            font-size: 28px;
+            line-height: 70px;
+            color: darken($color-input-border, 15%);
+            content: '\e610';
+        }
+    }
+
+    .input-location::before {
+        content: '\e693';
+    }
+
+    .input-keyword {
+        .form-control {
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            border-right: 1px solid darken($color-input-border, 10%);
+        }
+    }
+
+    .btn-search {
+        width: 20%;
+
+        .btn {
+            border-radius: 4px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            font-size: 16px;
+            text-transform: none;
+            height: 70px;
+            width: 100%;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 13px;
+            opacity: 0.8;
+            transition: opacity 0.2s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    .form-control {
+        border: none;
+        padding-left: 60px;
+        height: 70px;
+        color: $color-gray;
+    }
+}
+
+@include media-down(phone) {
+    .header-job-search {
+        .input-keyword,
+        .input-location,
+        .btn-search {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-keyword::before,
+        .input-location::before {
+            line-height: 50px;
+            font-size: 22px;
+        }
+
+        .form-control,
+        .btn-search .btn {
+            height: 50px;
+        }
+    }
+}
+
+//
+// JS Switch checkbox
+//
+.checkbox-switch {
+    margin-bottom: 25px;
+
+    label {
+        padding-left: 0;
+        line-height: 22px;
+        font-size: 15px;
+    }
+
+    .switchery {
+        margin-right: 10px;
+        margin-top: -5px;
+    }
+}
+
+//
+// Dropify
+//
+.dropify-wrapper {
+    border: 1px solid $color-border;
+    padding: 15px;
+}
+
+.dropify-filename {
+    visibility: hidden;
+}
+
+.dropify-wrapper.touch-fallback .dropify-clear {
+    border: 1px solid $color-red;
+    color: $color-red;
+    border-radius: 2px;
+    letter-spacing: 1px;
+    bottom: 15px;
+
+    &:hover {
+        color: #fff;
+        background-color: $color-red;
+    }
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-infos .dropify-infos-inner p {
+    color: $color-gray-light;
+    font-weight: 400;
+}
+
+.dropify-wrapper.touch-fallback .dropify-preview .dropify-render img {
+    margin: 0 auto;
+    float: none;
+}
+
+// Media queries
+@include media-down(phone) {
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .header-job-search {
+        margin-top: 0;
+    }
+}

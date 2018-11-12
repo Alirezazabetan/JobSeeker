@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="certification">
+            <h2><span jhiTranslate="jobAngularApp.certification.detail.title">Certification</span> {{certification.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.certification.name">Name</span></dt>
+                <dd>
+                    <span>{{certification.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.certification.certificationAuthority">Certification Authority</span></dt>
+                <dd>
+                    <span>{{certification.certificationAuthority}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.certification.licenseNumber">License Number</span></dt>
+                <dd>
+                    <span>{{certification.licenseNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.certification.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{certification.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.certification.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{certification.endDate}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/certification-my-suffix', certification.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

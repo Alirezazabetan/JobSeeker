@@ -1,0 +1,72 @@
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { NgbActiveModal, NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { JhiEventManager } from 'ng-jhipster';
+
+import { ILanguageMySuffix } from 'app/shared/model/language-my-suffix.model';
+import { LanguageMySuffixService } from './language-my-suffix.service';
+
+@Component({
+    selector: 'jhi-language-my-suffix-delete-dialog',
+    templateUrl: './language-my-suffix-delete-dialog.component.html'
+})
+export class LanguageMySuffixDeleteDialogComponent {
+    language: ILanguageMySuffix;
+
+    constructor(
+        private languageService: LanguageMySuffixService,
+        public activeModal: NgbActiveModal,
+        private eventManager: JhiEventManager
+    ) {}
+
+    clear() {
+        this.activeModal.dismiss('cancel');
+    }
+
+    confirmDelete(id: string) {
+        this.languageService.delete(id).subscribe(response => {
+            this.eventManager.broadcast({
+                name: 'languageListModification',
+                content: 'Deleted an language'
+            });
+            this.activeModal.dismiss(true);
+        });
+    }
+}
+
+@Component({
+    selector: 'jhi-language-my-suffix-delete-popup',
+    template: ''
+})
+export class LanguageMySuffixDeletePopupComponent implements OnInit, OnDestroy {
+    private ngbModalRef: NgbModalRef;
+
+    constructor(private activatedRoute: ActivatedRoute, private router: Router, private modalService: NgbModal) {}
+
+    ngOnInit() {
+        this.activatedRoute.data.subscribe(({ language }) => {
+            setTimeout(() => {
+                this.ngbModalRef = this.modalService.open(LanguageMySuffixDeleteDialogComponent as Component, {
+                    size: 'lg',
+                    backdrop: 'static'
+                });
+                this.ngbModalRef.componentInstance.language = language;
+                this.ngbModalRef.result.then(
+                    result => {
+                        this.router.navigate([{ outlets: { popup: null } }], { replaceUrl: true, queryParamsHandling: 'merge' });
+                        this.ngbModalRef = null;
+                    },
+                    reason => {
+                        this.router.navigate([{ outlets: { popup: null } }], { replaceUrl: true, queryParamsHandling: 'merge' });
+                        this.ngbModalRef = null;
+                    }
+                );
+            }, 0);
+        });
+    }
+
+    ngOnDestroy() {
+        this.ngbModalRef = null;
+    }
+}

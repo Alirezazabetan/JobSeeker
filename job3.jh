@@ -1,0 +1,144 @@
+entity Individual {
+	firstName String,
+    lastName String,
+    middleName String,
+    phoneNumber String,
+    mobileNumber String,
+    birthDate Instant,
+    address String,
+    jobTitle String,
+    shortDescription String,
+    webSite String,	
+    socialURLs String, //map<SocialType,url>
+    skills String, //list<Skill>
+    educations String, //list<Education>
+    workExpriences String, //List<WorkExprience>
+	accomplishment String //Accomplishment
+}
+
+entity Accomplishment{
+	publication String,
+    certification String,
+    patent String,
+    course String,
+    project String,
+    honorAndReward String,
+    testScore String,
+    language String,
+    organization String
+}
+
+entity Publication {
+	title String,
+    publication String,
+    date Instant,
+    author String
+}
+
+entity Certification{
+	name String,
+    certificationAuthority String,
+    licenseNumber String,
+    startDate Instant,
+    endDate Instant
+}
+
+entity Patent{
+	title String,
+    office String,
+    number Integer,
+    inventory String
+}
+
+entity Course{
+	name String,
+    number Integer,
+    associateWith String
+}
+
+entity Project{
+	name String,
+    startDate Instant,
+	endDate Instant,
+	associatedWith String,
+	projectUrl String,
+	description String
+}
+
+entity HonorAndReward{
+	title String,
+	associatedWith String,
+	issue String,
+	date Instant,
+	description String
+}
+
+entity TestScore{
+	name String,
+	associatedWith String,
+	score Float,
+	date Instant,
+	description String
+}
+
+entity Language{
+	language String,
+	proficiency String
+}
+
+entity Organization{
+	name String,
+	positionHeld String,
+	associatedWith String,
+	startDate Instant,
+	endDate Instant, 
+	description String
+}
+
+entity Company{
+	name String, 
+	workTitle String, 
+	workDescription String, 
+	location String, 
+	startDate Instant, 
+	website String, 
+	tel Long, 
+	employerRange String, 
+	email String, 
+	about String, 
+	socialNetworks String, //List<SocialNetwork>
+	vacancies String //list<JobPost>
+}
+
+entity JobPost{
+	title String,  
+	company String,
+    startDate Instant,
+	endDate Instant,
+	shortDescription String, 
+	applicationUrl String, 
+	location String, 
+	workinghours  String, 
+	jobType String, 
+	requeredSkills String, //List<Skill>
+	coverImage String, 
+	description String 
+}
+
+enum SocialNetwork{
+	Facebook,
+	Twitter,
+	LinkedIn,
+	Instagram,
+	GitHub,
+	Skype,
+	WhatsApp
+}
+
+paginate JobPost,Individual,Company with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl 
+
+angularSuffix * with mySuffix

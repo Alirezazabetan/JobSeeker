@@ -1,0 +1,61 @@
+.bootstrap-tagsinput {
+    background-color: #fff;
+    display: inline-block;
+    color: #555;
+    vertical-align: middle;
+    border-radius: 4px;
+    max-width: 100%;
+    width: 100%;
+    line-height: 22px;
+    cursor: text;
+
+    input {
+        border: 1px solid $color-input-border;
+        box-shadow: none;
+        outline: none;
+        background-color: $color-input-bg;
+        color: darken($color-gray-lighter, 5%);
+        padding: 5px 6px;
+        //margin-top: 10px;
+        width: auto;
+        max-width: inherit;
+        font-size: 14px;
+    }
+
+    &.form-control {
+        input::-moz-placeholder,
+        input:-ms-input-placeholder,
+        input::-webkit-input-placeholder {
+            color: $color-text;
+            opacity: 1;
+        }
+    }
+
+    .tag {
+        display: inline-block;
+        padding: 2px 6px;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        background-color: $bg-gray-light;
+        color: darken($color-gray-lighter, 5%);
+
+        [data-role='remove'] {
+            margin-left: 8px;
+            cursor: pointer;
+            transition: 0.3s ease-in-out;
+
+            &:after {
+                content: 'x';
+                padding: 0px 2px;
+                font-size: 14px;
+            }
+
+            &:hover {
+                color: $color-danger;
+            }
+        }
+    }
+}

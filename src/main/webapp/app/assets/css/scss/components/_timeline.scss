@@ -1,0 +1,79 @@
+.timeline {
+    position: relative;
+    list-style: none;
+    padding-left: 40px;
+    margin: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 4px;
+        border-radius: 2px;
+        background-color: $color-gray-lightest;
+    }
+
+    li {
+        position: relative;
+        margin-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 1px solid $color-border;
+        color: darken($color-gray-lighter, 5%);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: -42px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 100%;
+            background-color: $color-brand;
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    h6 {
+        color: $color-subtitle;
+        font-family: $font-family-subtitle;
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
+
+    h5 {
+        font-family: $font-family-body;
+        font-size: 16px;
+        color: $color-subtitle;
+    }
+
+    h4 {
+        font-family: $font-family-body;
+        font-weight: 600;
+        margin-top: 0;
+
+        small {
+            color: $color-gray-light;
+            letter-spacing: 0;
+            font-weight: 400;
+        }
+
+        small::before {
+            content: '\2014 \00A0';
+            margin-left: 20px;
+        }
+
+        a {
+            color: $color-text;
+
+            &:hover {
+                color: $color-brand;
+            }
+        }
+    }
+}

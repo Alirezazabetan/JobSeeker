@@ -1,0 +1,54 @@
+.bootstrap-select {
+    .dropdown-menu {
+        border-radius: 0;
+        padding: 0;
+        border-color: $color-input-border;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+        > li > a {
+            color: $color-text;
+            padding-left: 14px;
+            padding-right: 14px;
+            line-height: 24px;
+        }
+    }
+
+    .dropdown-toggle {
+        background-color: $color-input-bg;
+        color: $color-gray-light;
+        border-color: $color-input-border;
+        padding: 0 !important;
+        text-transform: none;
+        font-weight: 500;
+        border-radius: 0;
+
+        &:focus {
+            outline: none !important;
+        }
+    }
+
+    .filter-option {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &.label-style {
+        width: auto !important;
+        margin-left: 16px !important;
+        background-color: transparent;
+
+        .dropdown-toggle {
+            border: none;
+            background-color: transparent;
+            padding-right: 10px !important;
+
+            .caret {
+                border-top-color: #ccc;
+            }
+        }
+
+        .label {
+            margin-left: 0;
+        }
+    }
+}

@@ -1,0 +1,339 @@
+.btn {
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    //border-color: $color-hr;
+    padding: 0 30px;
+    color: #fff;
+    background-color: $color-gray-lightest;
+    transition: 0.2s linear;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        color: #fff;
+        background-color: darken($color-gray-lightest, 3%);
+        border-color: transparent;
+        box-shadow: none;
+        outline: none !important;
+    }
+
+    .fa,
+    [class^='ti-'] {
+        margin-right: 6px;
+        font-size: 16px;
+    }
+}
+
+.btn-link {
+    background-color: transparent;
+    border: 0;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        background-color: transparent;
+        text-decoration: none;
+    }
+}
+
+//
+// Variations
+//
+.btn-primary {
+    @include btn-variation($color-brand);
+}
+.btn-success {
+    @include btn-variation($color-success);
+}
+.btn-info {
+    @include btn-variation($color-info);
+}
+.btn-warning {
+    @include btn-variation($color-warning);
+}
+.btn-danger {
+    @include btn-variation($color-danger);
+}
+.btn-black {
+    @include btn-variation($color-dark);
+}
+.btn-gray {
+    color: $color-gray-light;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        color: $color-gray;
+    }
+}
+
+.btn-white {
+    background-color: #fff;
+    color: $color-gray-light;
+    border-color: #fff;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        color: $color-gray;
+        background-color: #fff;
+        box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+    }
+}
+
+// Color variation for sign in form
+.btn-facebook {
+    @include btn-variation(#3b5998);
+}
+.btn-twitter {
+    @include btn-variation(#00aced);
+}
+.btn-google {
+    @include btn-variation(#dd4b39);
+}
+
+//
+// Sizes
+//
+.btn-xs {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 12px;
+    font-size: 11px;
+
+    .fa,
+    [class^='ti-'] {
+        font-size: 12px;
+    }
+}
+
+.btn-sm {
+    height: 36px;
+    line-height: 36px;
+    padding: 0 20px;
+
+    .fa,
+    [class^='ti-'] {
+        font-size: 14px;
+    }
+}
+
+.btn-lg {
+    height: 52px;
+    line-height: 52px;
+    padding: 0 40px;
+}
+
+.btn-xl {
+    height: 64px;
+    line-height: 64px;
+    padding: 0 50px;
+    font-size: 14px;
+
+    .fa,
+    [class^='ti-'] {
+        font-size: 18px;
+    }
+}
+
+//
+// Rounded
+//
+.btn-round {
+    &.btn {
+        border-radius: 22px;
+    }
+    &.btn-xs {
+        border-radius: 12px;
+    }
+    &.btn-sm {
+        border-radius: 18px;
+    }
+    &.btn-lg {
+        border-radius: 26px;
+    }
+    &.btn-xl {
+        border-radius: 32px;
+    }
+}
+
+//
+// Outline
+//
+.btn-outline {
+    background-color: transparent;
+    border-width: 1px;
+
+    &.btn-primary {
+        color: $color-brand;
+    }
+    &.btn-success {
+        color: $color-success;
+    }
+    &.btn-info {
+        color: $color-info;
+    }
+    &.btn-warning {
+        color: $color-warning;
+    }
+    &.btn-danger {
+        color: $color-danger;
+    }
+    &.btn-black {
+        color: $color-dark;
+    }
+    &.btn-white {
+        color: #fff;
+        border-color: #fff;
+        box-shadow: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        color: #fff;
+    }
+
+    &.btn-white:hover,
+    &.btn-white:focus,
+    &.btn-white:active {
+        color: $color-gray;
+    }
+}
+
+//
+// Float
+//
+.btn-float {
+    padding: 0;
+    display: inline-block;
+    width: 44px;
+    text-align: center;
+    border-radius: 100%;
+
+    .fa,
+    [class^='ti-'] {
+        margin: 0;
+        vertical-align: text-bottom;
+    }
+
+    &.btn-xs {
+        width: 24px;
+    }
+    &.btn-sm {
+        width: 36px;
+    }
+    &.btn-lg {
+        width: 52px;
+
+        .fa,
+        [class^='ti-'] {
+            font-size: 22px;
+        }
+    }
+    &.btn-xl {
+        width: 64px;
+
+        .fa,
+        [class^='ti-'] {
+            font-size: 26px;
+        }
+    }
+}
+
+//
+// Navbar buttons
+//
+.btn-navbar {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 100%;
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-color: #eaeaf1;
+    color: lighten($color-nav-link, 5%);
+    transition: all 0.3s linear;
+
+    &:hover {
+        color: #fff;
+        background-color: $color-brand;
+        transition: all 0.3s linear;
+    }
+}
+
+//
+// Scroll up
+//
+#scroll-up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 22px;
+    text-align: center;
+    background-color: $color-brand;
+    color: #fff;
+    border-radius: 3px;
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+.body-scrolled #scroll-up {
+    opacity: 0.6;
+
+    &:hover {
+        opacity: 1;
+        transition: 0.2s ease-in-out;
+    }
+}
+
+@include media-down(tablet) {
+    #scroll-up {
+        right: 15px;
+        bottom: 5px;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        font-size: 18px;
+    }
+}
+
+//
+// Close modal
+//
+.close-modal {
+    position: fixed;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    z-index: 1;
+    display: none;
+}
+
+@include media-down(tablet) {
+    .close-modal {
+        display: block;
+    }
+}

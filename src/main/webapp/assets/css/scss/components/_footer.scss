@@ -1,0 +1,118 @@
+.site-footer {
+    background-color: #26272b;
+    padding: 45px 0 20px;
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-gray-lighter;
+
+    hr {
+        border-top-color: $color-gray-lighter;
+        opacity: 0.1;
+
+        &.small {
+            margin: 20px 0;
+        }
+    }
+
+    h6 {
+        color: #fff;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-top: 0;
+        letter-spacing: 2px;
+    }
+
+    a {
+        position: relative;
+        color: $color-gray-lighter;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 2px;
+            bottom: -2px;
+            border-bottom: 1px solid $color-gray-lighter;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+//
+// Links
+//
+.footer-links {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        display: block;
+    }
+
+    a {
+        color: $color-gray-lighter;
+
+        &:hover,
+        &:focus,
+        &:active {
+            color: #fff;
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    &.inline li {
+        display: inline-block;
+    }
+}
+
+//
+// Social icons
+//
+.site-footer .social-icons {
+    text-align: right;
+
+    a {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-left: 6px;
+        margin-right: 0;
+        border-radius: 100%;
+        background-color: #33353d;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+//
+// Copyright
+//
+.copyright-text {
+    margin: 0;
+}
+
+@include media-down(tablet) {
+    .site-footer [class^='col-'] {
+        margin-bottom: 30px;
+    }
+}
+
+@include media-down(phone) {
+    .site-footer {
+        padding-bottom: 0;
+
+        .social-icons,
+        .copyright-text {
+            text-align: center;
+        }
+    }
+}

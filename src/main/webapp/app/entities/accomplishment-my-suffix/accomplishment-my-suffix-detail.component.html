@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accomplishment">
+            <h2><span jhiTranslate="jobAngularApp.accomplishment.detail.title">Accomplishment</span> {{accomplishment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.publication">Publication</span></dt>
+                <dd>
+                    <span>{{accomplishment.publication}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.certification">Certification</span></dt>
+                <dd>
+                    <span>{{accomplishment.certification}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.patent">Patent</span></dt>
+                <dd>
+                    <span>{{accomplishment.patent}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.course">Course</span></dt>
+                <dd>
+                    <span>{{accomplishment.course}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.project">Project</span></dt>
+                <dd>
+                    <span>{{accomplishment.project}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.honorAndReward">Honor And Reward</span></dt>
+                <dd>
+                    <span>{{accomplishment.honorAndReward}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.testScore">Test Score</span></dt>
+                <dd>
+                    <span>{{accomplishment.testScore}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.language">Language</span></dt>
+                <dd>
+                    <span>{{accomplishment.language}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.accomplishment.organization">Organization</span></dt>
+                <dd>
+                    <span>{{accomplishment.organization}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/accomplishment-my-suffix', accomplishment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

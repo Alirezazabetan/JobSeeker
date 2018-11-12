@@ -1,0 +1,70 @@
+/*------------------------------------
+- Counter
+------------------------------------*/
+
+.counter {
+    text-align: center;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    i {
+        display: block;
+        font-size: 48px;
+        color: $color-gray-dark;
+    }
+
+    p {
+        position: relative;
+        font-size: 36px;
+        margin: 32px 0 52px;
+        color: $color-gray-dark;
+        font-family: $font-family-title;
+        letter-spacing: 3px;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            width: 30px;
+            margin-left: -15px;
+            height: 2px;
+            background-color: $color-gray-dark;
+            border-radius: 2px;
+        }
+    }
+
+    h6 {
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-text;
+    }
+}
+
+.counter.color-alt {
+    i,
+    p,
+    h6 {
+        color: #fff;
+    }
+
+    p::after {
+        background-color: #fff;
+    }
+}
+
+@include media-down(phone) {
+    .counter {
+        i {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        h6 {
+            font-size: 14px;
+        }
+    }
+}

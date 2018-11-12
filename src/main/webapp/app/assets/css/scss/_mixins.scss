@@ -1,0 +1,72 @@
+// Common
+@mixin media-down($point) {
+    $bp-smallphone: '(max-width: 480px)';
+    $bp-phone: '(max-width: 767px)';
+    $bp-tablet: '(max-width: 991px)';
+    $bp-desktop: '(max-width: 1199px)';
+
+    @if $point == smallphone {
+        @media #{$bp-smallphone} {
+            @content;
+        }
+    } @else if $point == phone {
+        @media #{$bp-phone} {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media #{$bp-tablet} {
+            @content;
+        }
+    } @else if $point == desktop {
+        @media #{$bp-desktop} {
+            @content;
+        }
+    } @else {
+        @media (max-width: #{$point}px) {
+            @content;
+        }
+    }
+}
+
+@mixin media-up($point) {
+    $bp-smallphone: '(min-width: 481px)';
+    $bp-phone: '(min-width: 768px)';
+    $bp-tablet: '(min-width: 992px)';
+    $bp-desktop: '(min-width: 1200px)';
+
+    @if $point == smallphone {
+        @media #{$bp-smallphone} {
+            @content;
+        }
+    } @else if $point == phone {
+        @media #{$bp-phone} {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media #{$bp-tablet} {
+            @content;
+        }
+    } @else if $point == desktop {
+        @media #{$bp-desktop} {
+            @content;
+        }
+    } @else {
+        @media (min-width: #{$point}px) {
+            @content;
+        }
+    }
+}
+
+// _buttons
+@mixin btn-variation($color) {
+    background-color: $color;
+    border-color: $color !important;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:active:focus {
+        color: #fff;
+        background-color: lighten($color, 3%);
+    }
+}

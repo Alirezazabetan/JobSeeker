@@ -7,6 +7,19 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "ماهیت ها",
+                "individualMySuffix": "Individual",
+                "accomplishmentMySuffix": "Accomplishment",
+                "publicationMySuffix": "Publication",
+                "certificationMySuffix": "Certification",
+                "patentMySuffix": "Patent",
+                "courseMySuffix": "Course",
+                "projectMySuffix": "Project",
+                "honorAndRewardMySuffix": "Honor And Reward",
+                "testScoreMySuffix": "Test Score",
+                "languageMySuffix": "Language",
+                "organizationMySuffix": "Organization",
+                "companyMySuffix": "Company",
+                "jobPostMySuffix": "Job Post",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

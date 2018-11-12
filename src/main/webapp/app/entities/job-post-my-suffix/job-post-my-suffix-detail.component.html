@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="jobPost">
+            <h2><span jhiTranslate="jobAngularApp.jobPost.detail.title">Job Post</span> {{jobPost.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.jobPost.title">Title</span></dt>
+                <dd>
+                    <span>{{jobPost.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.company">Company</span></dt>
+                <dd>
+                    <span>{{jobPost.company}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{jobPost.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{jobPost.endDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.shortDescription">Short Description</span></dt>
+                <dd>
+                    <span>{{jobPost.shortDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.applicationUrl">Application Url</span></dt>
+                <dd>
+                    <span>{{jobPost.applicationUrl}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.location">Location</span></dt>
+                <dd>
+                    <span>{{jobPost.location}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.workinghours">Workinghours</span></dt>
+                <dd>
+                    <span>{{jobPost.workinghours}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.jobType">Job Type</span></dt>
+                <dd>
+                    <span>{{jobPost.jobType}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.requeredSkills">Requered Skills</span></dt>
+                <dd>
+                    <span>{{jobPost.requeredSkills}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.coverImage">Cover Image</span></dt>
+                <dd>
+                    <span>{{jobPost.coverImage}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.jobPost.description">Description</span></dt>
+                <dd>
+                    <span>{{jobPost.description}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/job-post-my-suffix', jobPost.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

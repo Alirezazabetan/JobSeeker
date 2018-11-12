@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-organization-my-suffix-heading" jhiTranslate="jobAngularApp.organization.home.createOrEditLabel">Create or edit a Organization</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!organization.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="organization.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="organization.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.positionHeld" for="field_positionHeld">Position Held</label>
+                    <input type="text" class="form-control" name="positionHeld" id="field_positionHeld"
+                        [(ngModel)]="organization.positionHeld" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.associatedWith" for="field_associatedWith">Associated With</label>
+                    <input type="text" class="form-control" name="associatedWith" id="field_associatedWith"
+                        [(ngModel)]="organization.associatedWith" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.endDate" for="field_endDate">End Date</label>
+                    <div class="d-flex">
+                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="endDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.organization.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="organization.description" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

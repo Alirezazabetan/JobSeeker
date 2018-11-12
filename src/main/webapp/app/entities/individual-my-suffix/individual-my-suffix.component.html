@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jobAngularApp.individual.home.title">Individuals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-individual-my-suffix" [routerLink]="['/individual-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jobAngularApp.individual.home.createLabel">
+            Create new Individual
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="individuals">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span jhiTranslate="jobAngularApp.individual.firstName">First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span jhiTranslate="jobAngularApp.individual.lastName">Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="middleName"><span jhiTranslate="jobAngularApp.individual.middleName">Middle Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phoneNumber"><span jhiTranslate="jobAngularApp.individual.phoneNumber">Phone Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="mobileNumber"><span jhiTranslate="jobAngularApp.individual.mobileNumber">Mobile Number</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="birthDate"><span jhiTranslate="jobAngularApp.individual.birthDate">Birth Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address"><span jhiTranslate="jobAngularApp.individual.address">Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="jobTitle"><span jhiTranslate="jobAngularApp.individual.jobTitle">Job Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="shortDescription"><span jhiTranslate="jobAngularApp.individual.shortDescription">Short Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="webSite"><span jhiTranslate="jobAngularApp.individual.webSite">Web Site</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="socialURLs"><span jhiTranslate="jobAngularApp.individual.socialURLs">Social UR Ls</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="skills"><span jhiTranslate="jobAngularApp.individual.skills">Skills</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="educations"><span jhiTranslate="jobAngularApp.individual.educations">Educations</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workExpriences"><span jhiTranslate="jobAngularApp.individual.workExpriences">Work Expriences</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="accomplishment"><span jhiTranslate="jobAngularApp.individual.accomplishment">Accomplishment</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let individual of individuals ;trackBy: trackId">
+                <td><a [routerLink]="['/individual-my-suffix', individual.id, 'view' ]">{{individual.id}}</a></td>
+                <td>{{individual.firstName}}</td>
+                <td>{{individual.lastName}}</td>
+                <td>{{individual.middleName}}</td>
+                <td>{{individual.phoneNumber}}</td>
+                <td>{{individual.mobileNumber}}</td>
+                <td>{{individual.birthDate | date:'medium'}}</td>
+                <td>{{individual.address}}</td>
+                <td>{{individual.jobTitle}}</td>
+                <td>{{individual.shortDescription}}</td>
+                <td>{{individual.webSite}}</td>
+                <td>{{individual.socialURLs}}</td>
+                <td>{{individual.skills}}</td>
+                <td>{{individual.educations}}</td>
+                <td>{{individual.workExpriences}}</td>
+                <td>{{individual.accomplishment}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/individual-my-suffix', individual.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/individual-my-suffix', individual.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'individual-my-suffix/'+ individual.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="individuals && individuals.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

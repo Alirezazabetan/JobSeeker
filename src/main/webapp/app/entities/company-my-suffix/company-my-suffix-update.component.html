@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-company-my-suffix-heading" jhiTranslate="jobAngularApp.company.home.createOrEditLabel">Create or edit a Company</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!company.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="company.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                        [(ngModel)]="company.name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.workTitle" for="field_workTitle">Work Title</label>
+                    <input type="text" class="form-control" name="workTitle" id="field_workTitle"
+                        [(ngModel)]="company.workTitle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.workDescription" for="field_workDescription">Work Description</label>
+                    <input type="text" class="form-control" name="workDescription" id="field_workDescription"
+                        [(ngModel)]="company.workDescription" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.location" for="field_location">Location</label>
+                    <input type="text" class="form-control" name="location" id="field_location"
+                        [(ngModel)]="company.location" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.startDate" for="field_startDate">Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.website" for="field_website">Website</label>
+                    <input type="text" class="form-control" name="website" id="field_website"
+                        [(ngModel)]="company.website" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.tel" for="field_tel">Tel</label>
+                    <input type="number" class="form-control" name="tel" id="field_tel"
+                        [(ngModel)]="company.tel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.employerRange" for="field_employerRange">Employer Range</label>
+                    <input type="text" class="form-control" name="employerRange" id="field_employerRange"
+                        [(ngModel)]="company.employerRange" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.email" for="field_email">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="company.email" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.about" for="field_about">About</label>
+                    <input type="text" class="form-control" name="about" id="field_about"
+                        [(ngModel)]="company.about" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.socialNetworks" for="field_socialNetworks">Social Networks</label>
+                    <input type="text" class="form-control" name="socialNetworks" id="field_socialNetworks"
+                        [(ngModel)]="company.socialNetworks" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.company.vacancies" for="field_vacancies">Vacancies</label>
+                    <input type="text" class="form-control" name="vacancies" id="field_vacancies"
+                        [(ngModel)]="company.vacancies" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

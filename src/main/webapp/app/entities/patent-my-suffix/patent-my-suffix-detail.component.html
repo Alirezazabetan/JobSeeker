@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="patent">
+            <h2><span jhiTranslate="jobAngularApp.patent.detail.title">Patent</span> {{patent.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.patent.title">Title</span></dt>
+                <dd>
+                    <span>{{patent.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.patent.office">Office</span></dt>
+                <dd>
+                    <span>{{patent.office}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.patent.number">Number</span></dt>
+                <dd>
+                    <span>{{patent.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.patent.inventory">Inventory</span></dt>
+                <dd>
+                    <span>{{patent.inventory}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/patent-my-suffix', patent.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

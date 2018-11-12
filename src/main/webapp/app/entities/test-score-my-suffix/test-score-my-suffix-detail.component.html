@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="testScore">
+            <h2><span jhiTranslate="jobAngularApp.testScore.detail.title">Test Score</span> {{testScore.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.testScore.name">Name</span></dt>
+                <dd>
+                    <span>{{testScore.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.testScore.associatedWith">Associated With</span></dt>
+                <dd>
+                    <span>{{testScore.associatedWith}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.testScore.score">Score</span></dt>
+                <dd>
+                    <span>{{testScore.score}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.testScore.date">Date</span></dt>
+                <dd>
+                    <span>{{testScore.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.testScore.description">Description</span></dt>
+                <dd>
+                    <span>{{testScore.description}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/test-score-my-suffix', testScore.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

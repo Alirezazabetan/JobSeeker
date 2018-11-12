@@ -1,0 +1,102 @@
+.category-grid {
+    a {
+        display: inline-block;
+        float: left;
+        width: 31%;
+        padding: 30px 20px;
+        margin-right: 3.5%;
+        margin-bottom: 3.5%;
+        text-align: center;
+        border: 1px solid $color-border;
+        //border-top: 2px solid $color-brand;
+        color: $color-text;
+        background-color: #fff;
+        transition: 0.3s ease-in-out;
+
+        &:nth-child(3n + 3) {
+            margin-right: 0;
+        }
+
+        &:hover {
+            color: #fff;
+            background-color: $color-brand;
+            border-color: $color-brand;
+            box-shadow: 0 5px 65px 0 rgba(0, 0, 0, 0.15);
+        }
+    }
+
+    i {
+        font-size: 40px;
+        color: $color-brand;
+        background-color: #fff;
+        border-radius: 100%;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    h6 {
+        position: relative;
+        color: $color-gray;
+        font-size: 21px;
+        margin-bottom: 40px;
+        transition: 0.1s ease-in-out;
+
+        &::after {
+            position: absolute;
+            content: '';
+            bottom: -20px;
+            left: 50%;
+            margin-left: -15px;
+            width: 30px;
+            height: 2px;
+            border-radius: 2px;
+            background-color: $color-subtitle-light;
+        }
+    }
+
+    p {
+        color: $color-subtitle;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    a:hover {
+        h6,
+        p {
+            color: #fff;
+        }
+
+        i {
+            color: $color-brand;
+            background-color: #fff;
+        }
+
+        h6::after {
+            background-color: #fff;
+        }
+    }
+}
+
+@include media-down(tablet) {
+    .category-grid a {
+        width: 48%;
+        margin-bottom: 4%;
+        margin-right: 0;
+
+        &:nth-child(odd) {
+            margin-right: 4%;
+        }
+    }
+}
+
+@include media-down(smallphone) {
+    .category-grid a {
+        width: 100%;
+        margin-bottom: 5%;
+        margin-right: 0;
+    }
+}

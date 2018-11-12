@@ -1,0 +1,61 @@
+.details {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    li {
+        display: block;
+        line-height: 34px;
+        font-size: 14px;
+        color: $color-text;
+
+        a {
+            color: $color-text;
+            transition: 0.2s linear;
+
+            &:hover {
+                color: $color-brand;
+            }
+        }
+    }
+
+    .fa,
+    [class^='ti-'] {
+        font-size: 17px;
+        display: inline-block;
+        width: 26px;
+        color: $color-subtitle;
+    }
+
+    &.cols-2,
+    &.cols-3 {
+        li {
+            display: inline-block;
+            width: 50%;
+            float: left;
+        }
+
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+
+    &.cols-3 li {
+        width: 33.333333%;
+    }
+}
+
+@include media-down(tablet) {
+    .details.cols-3 li {
+        width: 50%;
+    }
+}
+
+@include media-down(phone) {
+    .details.cols-2 li,
+    .details.cols-3 li {
+        width: 100%;
+    }
+}

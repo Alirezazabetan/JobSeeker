@@ -1,0 +1,25 @@
+
+{
+    "jobAngularApp": {
+        "patent" : {
+            "home": {
+                "title": "Patents",
+                "createLabel": "Create a new Patent",
+                "createOrEditLabel": "Create or edit a Patent"
+            },
+            "created": "A new Patent is created with identifier {{ param }}",
+            "updated": "A Patent is updated with identifier {{ param }}",
+            "deleted": "A Patent is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Patent {{ id }}?"
+            },
+            "detail": {
+                "title": "Patent"
+            },
+            "title": "Title",
+            "office": "Office",
+            "number": "Number",
+            "inventory": "Inventory"
+        }
+    }
+}

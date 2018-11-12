@@ -1,0 +1,36 @@
+
+{
+    "jobAngularApp": {
+        "individual" : {
+            "home": {
+                "title": "Individuals",
+                "createLabel": "Create a new Individual",
+                "createOrEditLabel": "Create or edit a Individual"
+            },
+            "created": "A new Individual is created with identifier {{ param }}",
+            "updated": "A Individual is updated with identifier {{ param }}",
+            "deleted": "A Individual is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Individual {{ id }}?"
+            },
+            "detail": {
+                "title": "Individual"
+            },
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "middleName": "Middle Name",
+            "phoneNumber": "Phone Number",
+            "mobileNumber": "Mobile Number",
+            "birthDate": "Birth Date",
+            "address": "Address",
+            "jobTitle": "Job Title",
+            "shortDescription": "Short Description",
+            "webSite": "Web Site",
+            "socialURLs": "Social UR Ls",
+            "skills": "Skills",
+            "educations": "Educations",
+            "workExpriences": "Work Expriences",
+            "accomplishment": "Accomplishment"
+        }
+    }
+}

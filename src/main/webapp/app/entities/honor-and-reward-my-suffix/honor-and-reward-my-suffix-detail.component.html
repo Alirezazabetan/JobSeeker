@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="honorAndReward">
+            <h2><span jhiTranslate="jobAngularApp.honorAndReward.detail.title">Honor And Reward</span> {{honorAndReward.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.honorAndReward.title">Title</span></dt>
+                <dd>
+                    <span>{{honorAndReward.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.honorAndReward.associatedWith">Associated With</span></dt>
+                <dd>
+                    <span>{{honorAndReward.associatedWith}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.honorAndReward.issue">Issue</span></dt>
+                <dd>
+                    <span>{{honorAndReward.issue}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.honorAndReward.date">Date</span></dt>
+                <dd>
+                    <span>{{honorAndReward.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.honorAndReward.description">Description</span></dt>
+                <dd>
+                    <span>{{honorAndReward.description}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/honor-and-reward-my-suffix', honorAndReward.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
