@@ -1,0 +1,80 @@
+.chosen-container-single .chosen-single,
+.chosen-container-multi .chosen-choices {
+    background: none;
+    background-color: $color-input-bg;
+    color: $color-gray-light;
+    border-radius: 0;
+    border-color: $color-input-border;
+    font-size: 15px;
+    padding-left: 14px;
+    padding-right: 14px;
+    height: 44px;
+    line-height: 44px;
+    box-shadow: none;
+    transition: border-color 0.2s linear, background-color 0.2s linear;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single,
+.chosen-container-active .chosen-choices {
+    background-image: none;
+    box-shadow: none;
+    border-color: darken($color-input-border, 13%);
+    background-color: darken($color-input-bg, 1%);
+}
+
+.chosen-container-single .chosen-single div {
+    padding-left: 2px;
+}
+
+.chosen-container-single .chosen-single div b {
+    background-position: 0 12px;
+}
+
+.chosen-container-active.chosen-with-drop .chosen-single div b {
+    background-position: -18px 12px;
+}
+
+.chosen-container .chosen-drop {
+    //box-shadow: none;
+    border-color: darken($color-input-border, 13%);
+    background-color: darken($color-input-bg, 1%);
+    border-radius: 0;
+}
+
+.chosen-container .chosen-results {
+    padding: 0;
+    margin: 0;
+    color: $color-text;
+}
+
+.chosen-container .chosen-results li {
+    padding-left: 14px;
+    padding-right: 14px;
+    line-height: 24px;
+
+    &.highlighted {
+        background-image: none;
+        box-shadow: none;
+        color: $color-text;
+        background-color: darken($color-input-bg, 5%);
+    }
+}
+
+.chosen-container-multi .chosen-choices li.search-choice {
+    background: none;
+    box-shadow: none;
+    border-radius: 3px;
+    border: none;
+    background-color: lighten($bg-gray, 1%);
+    line-height: 22px;
+    font-size: 14px;
+    color: $color-gray-light;
+    margin: 8px 8px 8px 0;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    opacity: 0.5;
+    top: 8px;
+}
+
+// chosen-container-active chosen-with-drop

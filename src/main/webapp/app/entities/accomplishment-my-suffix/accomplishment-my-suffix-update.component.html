@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-accomplishment-my-suffix-heading" jhiTranslate="jobAngularApp.accomplishment.home.createOrEditLabel">Create or edit a Accomplishment</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!accomplishment.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="accomplishment.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.publication" for="field_publication">Publication</label>
+                    <input type="text" class="form-control" name="publication" id="field_publication"
+                        [(ngModel)]="accomplishment.publication" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.certification" for="field_certification">Certification</label>
+                    <input type="text" class="form-control" name="certification" id="field_certification"
+                        [(ngModel)]="accomplishment.certification" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.patent" for="field_patent">Patent</label>
+                    <input type="text" class="form-control" name="patent" id="field_patent"
+                        [(ngModel)]="accomplishment.patent" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.course" for="field_course">Course</label>
+                    <input type="text" class="form-control" name="course" id="field_course"
+                        [(ngModel)]="accomplishment.course" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.project" for="field_project">Project</label>
+                    <input type="text" class="form-control" name="project" id="field_project"
+                        [(ngModel)]="accomplishment.project" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.honorAndReward" for="field_honorAndReward">Honor And Reward</label>
+                    <input type="text" class="form-control" name="honorAndReward" id="field_honorAndReward"
+                        [(ngModel)]="accomplishment.honorAndReward" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.testScore" for="field_testScore">Test Score</label>
+                    <input type="text" class="form-control" name="testScore" id="field_testScore"
+                        [(ngModel)]="accomplishment.testScore" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.language" for="field_language">Language</label>
+                    <input type="text" class="form-control" name="language" id="field_language"
+                        [(ngModel)]="accomplishment.language" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.accomplishment.organization" for="field_organization">Organization</label>
+                    <input type="text" class="form-control" name="organization" id="field_organization"
+                        [(ngModel)]="accomplishment.organization" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

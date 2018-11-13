@@ -1,0 +1,40 @@
+.skills {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+
+    li {
+        display: inlin-block;
+        float: left;
+        font-size: 14px;
+        margin-bottom: 20px;
+        width: 45%;
+        margin-right: 10%;
+
+        &:nth-child(even) {
+            margin-right: 0;
+        }
+    }
+}
+
+.skill-value {
+    float: right;
+    font-family: $font-family-subtitle;
+}
+
+.skill-name {
+    font-family: $font-family-subtitle;
+}
+
+@include media-down(phone) {
+    .skills li {
+        width: 100%;
+        margin-right: 0;
+    }
+}

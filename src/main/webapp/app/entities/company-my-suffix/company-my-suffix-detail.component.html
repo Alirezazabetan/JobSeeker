@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="company">
+            <h2><span jhiTranslate="jobAngularApp.company.detail.title">Company</span> {{company.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.company.name">Name</span></dt>
+                <dd>
+                    <span>{{company.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.workTitle">Work Title</span></dt>
+                <dd>
+                    <span>{{company.workTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.workDescription">Work Description</span></dt>
+                <dd>
+                    <span>{{company.workDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.location">Location</span></dt>
+                <dd>
+                    <span>{{company.location}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{company.startDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.website">Website</span></dt>
+                <dd>
+                    <span>{{company.website}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.tel">Tel</span></dt>
+                <dd>
+                    <span>{{company.tel}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.employerRange">Employer Range</span></dt>
+                <dd>
+                    <span>{{company.employerRange}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.email">Email</span></dt>
+                <dd>
+                    <span>{{company.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.about">About</span></dt>
+                <dd>
+                    <span>{{company.about}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.socialNetworks">Social Networks</span></dt>
+                <dd>
+                    <span>{{company.socialNetworks}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.company.vacancies">Vacancies</span></dt>
+                <dd>
+                    <span>{{company.vacancies}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/company-my-suffix', company.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

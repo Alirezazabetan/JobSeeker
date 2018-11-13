@@ -1,0 +1,120 @@
+//
+// Coloring
+//
+
+// Background colors
+.bg-white {
+    background-color: #fff !important;
+}
+.bg-dark {
+    background-color: $bg-dark !important;
+}
+.bg-dark-light {
+    background-color: $bg-dark-light !important;
+}
+.bg-dark-lighter {
+    background-color: $bg-dark-lighter !important;
+}
+.bg-dark-lightest {
+    background-color: $bg-dark-lightest !important;
+}
+.bg-gray {
+    background-color: $bg-gray !important;
+}
+.bg-gray-light {
+    background-color: $bg-gray-light !important;
+}
+.bg-gray-lighter {
+    background-color: $bg-gray-lighter !important;
+}
+.bg-gray-lightest {
+    background-color: $bg-gray-lightest !important;
+}
+.bg-blue {
+    background-color: $bg-blue !important;
+}
+.bg-red {
+    background-color: $bg-red !important;
+}
+.bg-orange {
+    background-color: $bg-orange !important;
+}
+.bg-green {
+    background-color: $bg-green !important;
+}
+.bg-purple {
+    background-color: $bg-purple !important;
+}
+
+// Text colors
+.txt-white {
+    color: #fff !important;
+}
+.txt-dark {
+    color: $bg-dark !important;
+}
+.txt-gray {
+    color: $color-gray-light !important;
+}
+.txt-blue {
+    color: $bg-blue !important;
+}
+.txt-red {
+    color: $bg-red !important;
+}
+.txt-orange {
+    color: $bg-orange !important;
+}
+.txt-green {
+    color: $bg-green !important;
+}
+.txt-purple {
+    color: $bg-purple !important;
+}
+.txt-brand {
+    color: $color-brand !important;
+}
+
+//
+// Spacing
+//
+
+.no-padding {
+    padding: 0;
+}
+.no-padding-x {
+    padding-left: 0;
+    padding-right: 0;
+}
+.no-padding-y {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.no-padding-top {
+    padding-top: 0;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0;
+}
+
+.no-margin {
+    margin: 0;
+}
+.no-margin-x {
+    margin-left: 0;
+    margin-right: 0;
+}
+.no-margin-y {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}

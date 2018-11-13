@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="individual">
+            <h2><span jhiTranslate="jobAngularApp.individual.detail.title">Individual</span> {{individual.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.individual.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{individual.firstName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{individual.lastName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.middleName">Middle Name</span></dt>
+                <dd>
+                    <span>{{individual.middleName}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{individual.phoneNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.mobileNumber">Mobile Number</span></dt>
+                <dd>
+                    <span>{{individual.mobileNumber}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.birthDate">Birth Date</span></dt>
+                <dd>
+                    <span>{{individual.birthDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.address">Address</span></dt>
+                <dd>
+                    <span>{{individual.address}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.jobTitle">Job Title</span></dt>
+                <dd>
+                    <span>{{individual.jobTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.shortDescription">Short Description</span></dt>
+                <dd>
+                    <span>{{individual.shortDescription}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.webSite">Web Site</span></dt>
+                <dd>
+                    <span>{{individual.webSite}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.socialURLs">Social UR Ls</span></dt>
+                <dd>
+                    <span>{{individual.socialURLs}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.skills">Skills</span></dt>
+                <dd>
+                    <span>{{individual.skills}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.educations">Educations</span></dt>
+                <dd>
+                    <span>{{individual.educations}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.workExpriences">Work Expriences</span></dt>
+                <dd>
+                    <span>{{individual.workExpriences}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.individual.accomplishment">Accomplishment</span></dt>
+                <dd>
+                    <span>{{individual.accomplishment}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/individual-my-suffix', individual.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

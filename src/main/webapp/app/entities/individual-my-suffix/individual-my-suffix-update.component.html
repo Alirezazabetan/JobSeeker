@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-individual-my-suffix-heading" jhiTranslate="jobAngularApp.individual.home.createOrEditLabel">Create or edit a Individual</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!individual.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="individual.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.firstName" for="field_firstName">First Name</label>
+                    <input type="text" class="form-control" name="firstName" id="field_firstName"
+                        [(ngModel)]="individual.firstName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.lastName" for="field_lastName">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" id="field_lastName"
+                        [(ngModel)]="individual.lastName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.middleName" for="field_middleName">Middle Name</label>
+                    <input type="text" class="form-control" name="middleName" id="field_middleName"
+                        [(ngModel)]="individual.middleName" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                        [(ngModel)]="individual.phoneNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.mobileNumber" for="field_mobileNumber">Mobile Number</label>
+                    <input type="text" class="form-control" name="mobileNumber" id="field_mobileNumber"
+                        [(ngModel)]="individual.mobileNumber" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.birthDate" for="field_birthDate">Birth Date</label>
+                    <div class="d-flex">
+                        <input id="field_birthDate" type="datetime-local" class="form-control" name="birthDate" [(ngModel)]="birthDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.address" for="field_address">Address</label>
+                    <input type="text" class="form-control" name="address" id="field_address"
+                        [(ngModel)]="individual.address" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.jobTitle" for="field_jobTitle">Job Title</label>
+                    <input type="text" class="form-control" name="jobTitle" id="field_jobTitle"
+                        [(ngModel)]="individual.jobTitle" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.shortDescription" for="field_shortDescription">Short Description</label>
+                    <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                        [(ngModel)]="individual.shortDescription" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.webSite" for="field_webSite">Web Site</label>
+                    <input type="text" class="form-control" name="webSite" id="field_webSite"
+                        [(ngModel)]="individual.webSite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.socialURLs" for="field_socialURLs">Social UR Ls</label>
+                    <input type="text" class="form-control" name="socialURLs" id="field_socialURLs"
+                        [(ngModel)]="individual.socialURLs" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.skills" for="field_skills">Skills</label>
+                    <input type="text" class="form-control" name="skills" id="field_skills"
+                        [(ngModel)]="individual.skills" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.educations" for="field_educations">Educations</label>
+                    <input type="text" class="form-control" name="educations" id="field_educations"
+                        [(ngModel)]="individual.educations" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.workExpriences" for="field_workExpriences">Work Expriences</label>
+                    <input type="text" class="form-control" name="workExpriences" id="field_workExpriences"
+                        [(ngModel)]="individual.workExpriences" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.individual.accomplishment" for="field_accomplishment">Accomplishment</label>
+                    <input type="text" class="form-control" name="accomplishment" id="field_accomplishment"
+                        [(ngModel)]="individual.accomplishment" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

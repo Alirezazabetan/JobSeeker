@@ -1,0 +1,26 @@
+
+{
+    "jobAngularApp": {
+        "testScore" : {
+            "home": {
+                "title": "Test Scores",
+                "createLabel": "Create a new Test Score",
+                "createOrEditLabel": "Create or edit a Test Score"
+            },
+            "created": "A new Test Score is created with identifier {{ param }}",
+            "updated": "A Test Score is updated with identifier {{ param }}",
+            "deleted": "A Test Score is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Test Score {{ id }}?"
+            },
+            "detail": {
+                "title": "Test Score"
+            },
+            "name": "Name",
+            "associatedWith": "Associated With",
+            "score": "Score",
+            "date": "Date",
+            "description": "Description"
+        }
+    }
+}

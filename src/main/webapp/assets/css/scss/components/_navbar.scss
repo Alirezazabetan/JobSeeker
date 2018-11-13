@@ -1,0 +1,532 @@
+.navbar {
+    //position: absolute;
+    width: 100%;
+    background-color: #fff;
+    z-index: 11;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.15);
+    transition: top 0s ease-in-out, left 0.2s ease-out, right 0.2s ease-out;
+
+    .logo-wrapper {
+        display: inline-block;
+    }
+
+    .logo,
+    .logo-alt {
+        display: inline-block;
+
+        img {
+            height: 60px;
+        }
+    }
+
+    .logo-alt {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+
+        li:hover > ul {
+            top: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+//
+// Navbar toggle button
+//
+.navbar-toggle {
+    display: none;
+    float: left;
+    border: 0;
+    line-height: 40px;
+    padding: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 20px;
+    color: $color-nav-link;
+    font-size: 21px;
+}
+
+//
+// Menu
+//
+.nav-menu {
+    display: block;
+    text-align: center;
+
+    > li {
+        position: relative;
+        display: inline-block;
+        padding: 0 2px;
+
+        &:hover > a {
+            color: $color-brand;
+        }
+    }
+
+    a {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 0 12px;
+        line-height: 60px;
+        color: $color-text;
+        transition: color 0.2s linear;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: $color-brand;
+            text-decoration: none;
+        }
+    }
+
+    strong {
+        font-weight: 700;
+    }
+
+    // Sebmenu
+    ul {
+        position: absolute;
+        top: 120%;
+        left: 0;
+        z-index: 2;
+        background-color: #fff;
+        text-align: left;
+        padding: 8px;
+        opacity: 0;
+        visibility: hidden;
+        box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+        transition: opacity 0.4s ease-in-out, top 0.2s ease-in-out;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 30px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid #fff;
+        }
+
+        li a {
+            font-family: $font-family-body;
+            text-transform: none;
+            letter-spacing: 1px;
+            line-height: 32px;
+            padding-top: 3px;
+            padding-bottom: 3px;
+            white-space: nowrap;
+            display: block;
+            min-width: 150px;
+            font-weight: 500;
+            font-size: 13px;
+            color: $color-text;
+            border-bottom: 1px solid #f8f9fa;
+        }
+
+        li:last-child a {
+            border-bottom: 0;
+        }
+
+        a.active {
+            border-top: none;
+        }
+    }
+}
+
+//
+// User account
+//
+.user-account {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+
+    &:hover .dropdown-menu {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .dropdown-toggle {
+        line-height: 60px;
+        display: inline-block;
+
+        img {
+            width: 38px;
+            height: 38px;
+            border-radius: 100%;
+        }
+
+        h6 {
+            display: inline-block;
+            color: #fff;
+            padding-left: 10px;
+        }
+    }
+
+    .dropdown-menu {
+        padding: 8px;
+        border: none;
+        top: 120%;
+        right: -15px;
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        margin-top: 0;
+        border-radius: 0;
+        box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+        transition: opacity 0.4s ease-in-out, top 0.2s ease-in-out;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            right: 31px;
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid #fff;
+        }
+
+        li > a {
+            line-height: 28px;
+            white-space: nowrap;
+            display: block;
+            font-family: $font-family-body;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 1px;
+            padding: 3px 8px;
+            border-bottom: 1px solid #f8f9fa;
+            color: $color-text;
+            transition: color 0.2s linear;
+
+            &:hover,
+            &.active {
+                background-color: #fff;
+                color: $color-brand;
+            }
+        }
+
+        li:last-child > a {
+            border-bottom: 0;
+        }
+    }
+}
+
+.user-login {
+    line-height: 60px;
+    font-size: 13px;
+    color: #eee;
+
+    a {
+        color: #fff;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-in-out;
+        &:hover {
+            color: #fff;
+            opacity: 1;
+        }
+    }
+
+    .btn {
+        margin-right: 8px;
+        color: #fff;
+        opacity: 1;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+//
+// Transparent navigation on header
+//
+.nav-on-header .navbar {
+    position: absolute;
+    margin-top: 20px;
+    background-color: transparent;
+    box-shadow: none;
+
+    .navbar-toggle,
+    .nav-menu a {
+        color: #fff;
+        font-weight: 500;
+        opacity: 0.6;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: #fff;
+            opacity: 1;
+        }
+    }
+
+    .nav-menu ul li a {
+        color: $color-text;
+        font-weight: 500;
+        opacity: 1;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: $color-brand;
+            opacity: 1;
+        }
+    }
+
+    .nav-menu > li:hover > a {
+        color: #fff;
+        opacity: 1;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    .logo-alt {
+        display: inline-block;
+    }
+}
+
+//
+// Sticky navigation bar
+//
+.sticky-nav.body-scrolled .navbar,
+.smart-nav.body-scrolled .navbar {
+    position: fixed;
+    top: -70px;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    margin-top: 0;
+    background-color: #fff;
+    box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.1);
+    transition: top 0.3s ease-in-out, left 0.2s ease-out, right 0.2s ease-out;
+
+    .navbar-toggle,
+    .nav-menu a {
+        color: $color-nav-link;
+        font-weight: 500;
+        opacity: 1;
+
+        &:hover,
+        &:focus,
+        &.active {
+            color: $color-brand;
+        }
+    }
+
+    .nav-menu > li:hover > a {
+        color: $color-brand;
+    }
+
+    .logo {
+        display: inline-block;
+    }
+
+    .logo-alt {
+        display: none;
+    }
+
+    .user-login {
+        color: $color-text;
+
+        a:not(.btn) {
+            color: $color-brand;
+        }
+    }
+}
+
+.sticky-nav.body-scrolled .navbar {
+    top: 0;
+}
+
+//
+// Offcanvas
+//
+.offcanvas-show .navbar-toggle {
+    color: $color-brand;
+}
+
+.offcanvas-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 98;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+// Media queries
+@include media-down(tablet) {
+    // off-canvas for sidenav
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body > main {
+        //position: relative;
+        //left: 0;
+        //transition: left .2s ease-out;
+    }
+
+    .navbar .nav-menu {
+        position: fixed;
+        left: -80%;
+        top: 0;
+        bottom: 0;
+        z-index: 99;
+        width: 80%;
+        max-width: 300px;
+        height: 100%;
+        overflow-y: auto;
+        background-color: #fff;
+        margin-left: 0;
+        padding: 24px 16px;
+        transition: left 0.5s;
+
+        a {
+            line-height: 50px !important;
+
+            &.active {
+                border-top: 0;
+            }
+        }
+
+        > li {
+            display: block;
+            border-bottom: 1px solid $color-gray-lightest;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+
+            > a {
+                color: $color-gray-dark !important;
+                opacity: 1 !important;
+
+                &.active {
+                    color: $color-brand !important;
+                }
+            }
+        }
+
+        ul {
+            visibility: visible;
+            opacity: 1;
+            position: static;
+            border-top: 0;
+
+            li a {
+                border-bottom: 0;
+                line-height: 40px !important;
+            }
+        }
+    }
+
+    // Show offcanvas
+    .offcanvas-show {
+        /*
+    > main,
+    .site-footer {
+      left: 80%;
+    }
+
+    .navbar .pull-left {
+      position: fixed;
+      left: 80% !important;
+      right: -80% !important;
+      transition: .2s ease-out;
+    }
+
+    .navbar .pull-right {
+      display: none;
+    }
+
+    .site-footer {
+      position: relative;
+    }
+*/
+        .navbar .nav-menu {
+            left: 0;
+            box-shadow: 8px 0px 10px 0px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    // Navbar style
+    .sticky-nav {
+        //padding-top: 60px;
+    }
+
+    .navbar {
+        //box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
+        transition: 0.5s;
+
+        .nav-menu {
+            text-align: left;
+
+            > li > a {
+                font-weight: 600 !important;
+            }
+
+            ul {
+                box-shadow: none;
+            }
+        }
+
+        .navbar-toggle {
+            display: inline-block;
+        }
+    }
+
+    .nav-on-header .navbar {
+        margin-top: 0;
+    }
+}
+
+@include media-down(phone) {
+    .navbar .logo img,
+    .navbar .logo-alt img {
+        height: 40px;
+        margin-top: 10px;
+    }
+
+    .user-login .btn {
+        line-height: 26px;
+        height: 28px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 11px;
+    }
+}
+
+@include media-down(smallphone) {
+    .navbar {
+        .container,
+        .container-fluid {
+            padding-left: 5px;
+        }
+    }
+
+    .user-account {
+        margin: 0;
+    }
+}

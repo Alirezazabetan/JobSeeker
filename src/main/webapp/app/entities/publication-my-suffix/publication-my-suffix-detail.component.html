@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="publication">
+            <h2><span jhiTranslate="jobAngularApp.publication.detail.title">Publication</span> {{publication.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jobAngularApp.publication.title">Title</span></dt>
+                <dd>
+                    <span>{{publication.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.publication.publication">Publication</span></dt>
+                <dd>
+                    <span>{{publication.publication}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.publication.date">Date</span></dt>
+                <dd>
+                    <span>{{publication.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="jobAngularApp.publication.author">Author</span></dt>
+                <dd>
+                    <span>{{publication.author}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/publication-my-suffix', publication.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

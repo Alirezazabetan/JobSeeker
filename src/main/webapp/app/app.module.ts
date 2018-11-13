@@ -18,6 +18,7 @@ import { JobAngularAccountModule } from './account/account.module';
 import { JobAngularEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
+import { OriginHomeComponent } from './origin-home/origin-home.component';
 
 @NgModule({
     imports: [
@@ -31,7 +32,15 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         JobAngularEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        ActiveMenuDirective,
+        FooterComponent,
+        OriginHomeComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,

@@ -1,0 +1,119 @@
+.site-header {
+    position: relative;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    //overflow: hidden;
+    padding: 120px 0;
+    color: #fff;
+    z-index: 0;
+    color: #fff;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background-color: rgba(darken($color-brand, 50%), 0.55);
+    }
+
+    &.bg-repeat {
+        background-size: none;
+        background-repeat: repeat;
+    }
+
+    &.size-sm {
+        padding: 60px 0;
+    }
+
+    &.size-lg {
+        padding: 180px 0;
+    }
+
+    &.size-full {
+        height: 100vh;
+
+        .container,
+        .container-fluid {
+            position: relative;
+            top: 30%;
+            transform: translateY(-50%);
+        }
+    }
+
+    h1 {
+        font-family: $font-family-subtitle;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 76px;
+        margin-bottom: 24px;
+        letter-spacing: 2px;
+    }
+
+    h4,
+    h3 {
+        letter-spacing: 1px;
+        line-height: 36px;
+    }
+
+    mark {
+        color: rgba(lighten($color-brand, 10%), 0.8);
+        background-color: transparent;
+        font-weight: bold;
+    }
+}
+
+@include media-down(tablet) {
+    .site-header {
+        h1 {
+            font-size: 48px;
+            line-height: 50px;
+            margin-bottom: 20px;
+        }
+
+        h4,
+        h3 {
+            line-height: 32px;
+            font-size: 21px;
+        }
+
+        h5 {
+            line-height: 28px;
+            font-size: 18px;
+        }
+    }
+}
+
+@include media-down(phone) {
+    .site-header {
+        padding: 60px 0;
+
+        &.size-sm {
+            padding: 30px 0;
+        }
+
+        &.size-lg {
+            padding: 90px 0;
+        }
+
+        h1 {
+            font-size: 28px;
+            line-height: 40px;
+            margin-bottom: 16px;
+        }
+
+        h4,
+        h3 {
+            line-height: 25px;
+            font-size: 17px;
+        }
+
+        h5 {
+            line-height: 22px;
+            font-size: 16px;
+        }
+    }
+}

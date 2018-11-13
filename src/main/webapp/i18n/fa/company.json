@@ -1,0 +1,33 @@
+
+{
+    "jobAngularApp": {
+        "company" : {
+            "home": {
+                "title": "Companies",
+                "createLabel": "Create a new Company",
+                "createOrEditLabel": "Create or edit a Company"
+            },
+            "created": "A new Company is created with identifier {{ param }}",
+            "updated": "A Company is updated with identifier {{ param }}",
+            "deleted": "A Company is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Company {{ id }}?"
+            },
+            "detail": {
+                "title": "Company"
+            },
+            "name": "Name",
+            "workTitle": "Work Title",
+            "workDescription": "Work Description",
+            "location": "Location",
+            "startDate": "Start Date",
+            "website": "Website",
+            "tel": "Tel",
+            "employerRange": "Employer Range",
+            "email": "Email",
+            "about": "About",
+            "socialNetworks": "Social Networks",
+            "vacancies": "Vacancies"
+        }
+    }
+}

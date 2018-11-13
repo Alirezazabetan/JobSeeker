@@ -1,0 +1,52 @@
+{
+    "name": "Accomplishment",
+    "fields": [
+        {
+            "fieldName": "publication",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "certification",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "patent",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "course",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "project",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "honorAndReward",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "testScore",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "language",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "organization",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181110053956",
+    "entityTableName": "accomplishment",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

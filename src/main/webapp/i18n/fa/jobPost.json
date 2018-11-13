@@ -1,0 +1,33 @@
+
+{
+    "jobAngularApp": {
+        "jobPost" : {
+            "home": {
+                "title": "Job Posts",
+                "createLabel": "Create a new Job Post",
+                "createOrEditLabel": "Create or edit a Job Post"
+            },
+            "created": "A new Job Post is created with identifier {{ param }}",
+            "updated": "A Job Post is updated with identifier {{ param }}",
+            "deleted": "A Job Post is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Job Post {{ id }}?"
+            },
+            "detail": {
+                "title": "Job Post"
+            },
+            "title": "Title",
+            "company": "Company",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "shortDescription": "Short Description",
+            "applicationUrl": "Application Url",
+            "location": "Location",
+            "workinghours": "Workinghours",
+            "jobType": "Job Type",
+            "requeredSkills": "Requered Skills",
+            "coverImage": "Cover Image",
+            "description": "Description"
+        }
+    }
+}

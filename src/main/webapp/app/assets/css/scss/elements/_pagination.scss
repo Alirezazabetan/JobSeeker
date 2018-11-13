@@ -1,0 +1,119 @@
+.pagination {
+    margin-top: 30px;
+    box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+
+    > li > a,
+    > li > span {
+        padding: 9px 15px;
+        font-size: 15px;
+        color: $color-text;
+        background-color: #fff;
+        border: none;
+        margin: 0;
+        transition: 0.15s linear;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $color-brand;
+        }
+    }
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+        background-color: $color-brand;
+    }
+
+    &.no-shadow {
+        box-shadow: none;
+    }
+}
+
+.pager {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 30px;
+
+    li > a,
+    li > span {
+        color: $color-text;
+        border: 0;
+        padding: 6px 20px;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px 0px rgba(50, 50, 50, 0.15);
+        transition: 0.2s linear;
+
+        &:hover,
+        &:focus {
+            color: #fff;
+            background-color: $color-brand;
+        }
+    }
+
+    .previous [class^='ti-'],
+    .previous .fa {
+        margin-right: 12px;
+    }
+
+    .next [class^='ti-'],
+    .next .fa {
+        margin-left: 12px;
+    }
+}
+
+//
+// Spinner
+//
+.spinner {
+    margin: 30px auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > span {
+    width: 12px;
+    height: 12px;
+    background-color: $color-brand;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .dot1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+}
+
+.spinner .dot2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes sk-bouncedelay {
+    0%,
+    80%,
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    40% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
