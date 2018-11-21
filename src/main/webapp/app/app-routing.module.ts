@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
-import { OriginHomeComponent } from 'app/origin-home/origin-home.component';
+import { JobListComponent } from 'app/job-list/job-list.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -12,7 +12,16 @@ const routes: Routes = [
         path: 'admin',
         loadChildren: './admin/admin.module#JobAngularAdminModule'
     },
-    { path: '', component: OriginHomeComponent },
+    { path: 'job-list', redirectTo: '/job-list', pathMatch: 'full' },
+    {
+        path: 'job-list',
+        component: JobListComponent
+    },
+    {
+        path: 'job-list',
+        loadChildren: './admin/admin.module#JobAngularAdminModule'
+    }
+    // { path: '', component: OriginHomeComponent },
     // { path: '', redirectTo: '/car-list', pathMatch: 'full' },
 
     // {
@@ -28,7 +37,7 @@ const routes: Routes = [
     //     component: CarEditComponent
     // },
     // { path: 'login', component: LoginComponent },
-    { path: '**', redirectTo: '' }
+    // { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

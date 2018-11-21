@@ -63,8 +63,8 @@ public class JobPostResourceIntTest {
     private static final String DEFAULT_LOCATION = "AAAAAAAAAA";
     private static final String UPDATED_LOCATION = "BBBBBBBBBB";
 
-    private static final String DEFAULT_WORKINGHOURS = "AAAAAAAAAA";
-    private static final String UPDATED_WORKINGHOURS = "BBBBBBBBBB";
+    private static final Integer DEFAULT_WORKINGHOURS = 1;
+    private static final Integer UPDATED_WORKINGHOURS = 2;
 
     private static final String DEFAULT_JOB_TYPE = "AAAAAAAAAA";
     private static final String UPDATED_JOB_TYPE = "BBBBBBBBBB";
@@ -77,6 +77,18 @@ public class JobPostResourceIntTest {
 
     private static final String DEFAULT_DESCRIPTION = "AAAAAAAAAA";
     private static final String UPDATED_DESCRIPTION = "BBBBBBBBBB";
+
+    private static final Long DEFAULT_MIN_SALARY = 1L;
+    private static final Long UPDATED_MIN_SALARY = 2L;
+
+    private static final Long DEFAULT_MAX_SALARY = 1L;
+    private static final Long UPDATED_MAX_SALARY = 2L;
+
+    private static final Integer DEFAULT_YEAR_EXPERIENCE = 1;
+    private static final Integer UPDATED_YEAR_EXPERIENCE = 2;
+
+    private static final String DEFAULT_CERTIFICATE_NEEDED = "AAAAAAAAAA";
+    private static final String UPDATED_CERTIFICATE_NEEDED = "BBBBBBBBBB";
 
     @Autowired
     private JobPostRepository jobPostRepository;
@@ -132,7 +144,11 @@ public class JobPostResourceIntTest {
             .jobType(DEFAULT_JOB_TYPE)
             .requeredSkills(DEFAULT_REQUERED_SKILLS)
             .coverImage(DEFAULT_COVER_IMAGE)
-            .description(DEFAULT_DESCRIPTION);
+            .description(DEFAULT_DESCRIPTION)
+            .minSalary(DEFAULT_MIN_SALARY)
+            .maxSalary(DEFAULT_MAX_SALARY)
+            .yearExperience(DEFAULT_YEAR_EXPERIENCE)
+            .certificateNeeded(DEFAULT_CERTIFICATE_NEEDED);
         return jobPost;
     }
 
@@ -169,6 +185,10 @@ public class JobPostResourceIntTest {
         assertThat(testJobPost.getRequeredSkills()).isEqualTo(DEFAULT_REQUERED_SKILLS);
         assertThat(testJobPost.getCoverImage()).isEqualTo(DEFAULT_COVER_IMAGE);
         assertThat(testJobPost.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
+        assertThat(testJobPost.getMinSalary()).isEqualTo(DEFAULT_MIN_SALARY);
+        assertThat(testJobPost.getMaxSalary()).isEqualTo(DEFAULT_MAX_SALARY);
+        assertThat(testJobPost.getYearExperience()).isEqualTo(DEFAULT_YEAR_EXPERIENCE);
+        assertThat(testJobPost.getCertificateNeeded()).isEqualTo(DEFAULT_CERTIFICATE_NEEDED);
     }
 
     @Test
@@ -207,11 +227,15 @@ public class JobPostResourceIntTest {
             .andExpect(jsonPath("$.[*].shortDescription").value(hasItem(DEFAULT_SHORT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].applicationUrl").value(hasItem(DEFAULT_APPLICATION_URL.toString())))
             .andExpect(jsonPath("$.[*].location").value(hasItem(DEFAULT_LOCATION.toString())))
-            .andExpect(jsonPath("$.[*].workinghours").value(hasItem(DEFAULT_WORKINGHOURS.toString())))
+            .andExpect(jsonPath("$.[*].workinghours").value(hasItem(DEFAULT_WORKINGHOURS)))
             .andExpect(jsonPath("$.[*].jobType").value(hasItem(DEFAULT_JOB_TYPE.toString())))
             .andExpect(jsonPath("$.[*].requeredSkills").value(hasItem(DEFAULT_REQUERED_SKILLS.toString())))
             .andExpect(jsonPath("$.[*].coverImage").value(hasItem(DEFAULT_COVER_IMAGE.toString())))
-            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
+            .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
+            .andExpect(jsonPath("$.[*].minSalary").value(hasItem(DEFAULT_MIN_SALARY.intValue())))
+            .andExpect(jsonPath("$.[*].maxSalary").value(hasItem(DEFAULT_MAX_SALARY.intValue())))
+            .andExpect(jsonPath("$.[*].yearExperience").value(hasItem(DEFAULT_YEAR_EXPERIENCE)))
+            .andExpect(jsonPath("$.[*].certificateNeeded").value(hasItem(DEFAULT_CERTIFICATE_NEEDED.toString())));
     }
     
 
@@ -232,11 +256,15 @@ public class JobPostResourceIntTest {
             .andExpect(jsonPath("$.shortDescription").value(DEFAULT_SHORT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.applicationUrl").value(DEFAULT_APPLICATION_URL.toString()))
             .andExpect(jsonPath("$.location").value(DEFAULT_LOCATION.toString()))
-            .andExpect(jsonPath("$.workinghours").value(DEFAULT_WORKINGHOURS.toString()))
+            .andExpect(jsonPath("$.workinghours").value(DEFAULT_WORKINGHOURS))
             .andExpect(jsonPath("$.jobType").value(DEFAULT_JOB_TYPE.toString()))
             .andExpect(jsonPath("$.requeredSkills").value(DEFAULT_REQUERED_SKILLS.toString()))
             .andExpect(jsonPath("$.coverImage").value(DEFAULT_COVER_IMAGE.toString()))
-            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()));
+            .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
+            .andExpect(jsonPath("$.minSalary").value(DEFAULT_MIN_SALARY.intValue()))
+            .andExpect(jsonPath("$.maxSalary").value(DEFAULT_MAX_SALARY.intValue()))
+            .andExpect(jsonPath("$.yearExperience").value(DEFAULT_YEAR_EXPERIENCE))
+            .andExpect(jsonPath("$.certificateNeeded").value(DEFAULT_CERTIFICATE_NEEDED.toString()));
     }
     @Test
     public void getNonExistingJobPost() throws Exception {
@@ -266,7 +294,11 @@ public class JobPostResourceIntTest {
             .jobType(UPDATED_JOB_TYPE)
             .requeredSkills(UPDATED_REQUERED_SKILLS)
             .coverImage(UPDATED_COVER_IMAGE)
-            .description(UPDATED_DESCRIPTION);
+            .description(UPDATED_DESCRIPTION)
+            .minSalary(UPDATED_MIN_SALARY)
+            .maxSalary(UPDATED_MAX_SALARY)
+            .yearExperience(UPDATED_YEAR_EXPERIENCE)
+            .certificateNeeded(UPDATED_CERTIFICATE_NEEDED);
         JobPostDTO jobPostDTO = jobPostMapper.toDto(updatedJobPost);
 
         restJobPostMockMvc.perform(put("/api/job-posts")
@@ -290,6 +322,10 @@ public class JobPostResourceIntTest {
         assertThat(testJobPost.getRequeredSkills()).isEqualTo(UPDATED_REQUERED_SKILLS);
         assertThat(testJobPost.getCoverImage()).isEqualTo(UPDATED_COVER_IMAGE);
         assertThat(testJobPost.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
+        assertThat(testJobPost.getMinSalary()).isEqualTo(UPDATED_MIN_SALARY);
+        assertThat(testJobPost.getMaxSalary()).isEqualTo(UPDATED_MAX_SALARY);
+        assertThat(testJobPost.getYearExperience()).isEqualTo(UPDATED_YEAR_EXPERIENCE);
+        assertThat(testJobPost.getCertificateNeeded()).isEqualTo(UPDATED_CERTIFICATE_NEEDED);
     }
 
     @Test

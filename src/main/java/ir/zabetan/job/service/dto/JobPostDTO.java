@@ -25,7 +25,7 @@ public class JobPostDTO implements Serializable {
 
     private String location;
 
-    private String workinghours;
+    private Integer workinghours;
 
     private String jobType;
 
@@ -34,6 +34,14 @@ public class JobPostDTO implements Serializable {
     private String coverImage;
 
     private String description;
+
+    private Long minSalary;
+
+    private Long maxSalary;
+
+    private Integer yearExperience;
+
+    private String certificateNeeded;
 
     public String getId() {
         return id;
@@ -99,11 +107,11 @@ public class JobPostDTO implements Serializable {
         this.location = location;
     }
 
-    public String getWorkinghours() {
+    public Integer getWorkinghours() {
         return workinghours;
     }
 
-    public void setWorkinghours(String workinghours) {
+    public void setWorkinghours(Integer workinghours) {
         this.workinghours = workinghours;
     }
 
@@ -139,6 +147,38 @@ public class JobPostDTO implements Serializable {
         this.description = description;
     }
 
+    public Long getMinSalary() {
+        return minSalary;
+    }
+
+    public void setMinSalary(Long minSalary) {
+        this.minSalary = minSalary;
+    }
+
+    public Long getMaxSalary() {
+        return maxSalary;
+    }
+
+    public void setMaxSalary(Long maxSalary) {
+        this.maxSalary = maxSalary;
+    }
+
+    public Integer getYearExperience() {
+        return yearExperience;
+    }
+
+    public void setYearExperience(Integer yearExperience) {
+        this.yearExperience = yearExperience;
+    }
+
+    public String getCertificateNeeded() {
+        return certificateNeeded;
+    }
+
+    public void setCertificateNeeded(String certificateNeeded) {
+        this.certificateNeeded = certificateNeeded;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -171,11 +211,15 @@ public class JobPostDTO implements Serializable {
             ", shortDescription='" + getShortDescription() + "'" +
             ", applicationUrl='" + getApplicationUrl() + "'" +
             ", location='" + getLocation() + "'" +
-            ", workinghours='" + getWorkinghours() + "'" +
+            ", workinghours=" + getWorkinghours() +
             ", jobType='" + getJobType() + "'" +
             ", requeredSkills='" + getRequeredSkills() + "'" +
             ", coverImage='" + getCoverImage() + "'" +
             ", description='" + getDescription() + "'" +
+            ", minSalary=" + getMinSalary() +
+            ", maxSalary=" + getMaxSalary() +
+            ", yearExperience=" + getYearExperience() +
+            ", certificateNeeded='" + getCertificateNeeded() + "'" +
             "}";
     }
 }

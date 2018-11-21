@@ -19,6 +19,7 @@ import { JobAngularEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 import { OriginHomeComponent } from './origin-home/origin-home.component';
+import { JobListComponent } from './job-list/job-list.component';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { OriginHomeComponent } from './origin-home/origin-home.component';
         PageRibbonComponent,
         ActiveMenuDirective,
         FooterComponent,
-        OriginHomeComponent
+        OriginHomeComponent,
+        JobListComponent
     ],
     providers: [
         {

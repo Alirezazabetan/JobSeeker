@@ -41,7 +41,7 @@ public class JobPost implements Serializable {
     private String location;
 
     @Field("workinghours")
-    private String workinghours;
+    private Integer workinghours;
 
     @Field("job_type")
     private String jobType;
@@ -54,6 +54,18 @@ public class JobPost implements Serializable {
 
     @Field("description")
     private String description;
+
+    @Field("min_salary")
+    private Long minSalary;
+
+    @Field("max_salary")
+    private Long maxSalary;
+
+    @Field("year_experience")
+    private Integer yearExperience;
+
+    @Field("certificate_needed")
+    private String certificateNeeded;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -155,16 +167,16 @@ public class JobPost implements Serializable {
         this.location = location;
     }
 
-    public String getWorkinghours() {
+    public Integer getWorkinghours() {
         return workinghours;
     }
 
-    public JobPost workinghours(String workinghours) {
+    public JobPost workinghours(Integer workinghours) {
         this.workinghours = workinghours;
         return this;
     }
 
-    public void setWorkinghours(String workinghours) {
+    public void setWorkinghours(Integer workinghours) {
         this.workinghours = workinghours;
     }
 
@@ -219,6 +231,58 @@ public class JobPost implements Serializable {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public Long getMinSalary() {
+        return minSalary;
+    }
+
+    public JobPost minSalary(Long minSalary) {
+        this.minSalary = minSalary;
+        return this;
+    }
+
+    public void setMinSalary(Long minSalary) {
+        this.minSalary = minSalary;
+    }
+
+    public Long getMaxSalary() {
+        return maxSalary;
+    }
+
+    public JobPost maxSalary(Long maxSalary) {
+        this.maxSalary = maxSalary;
+        return this;
+    }
+
+    public void setMaxSalary(Long maxSalary) {
+        this.maxSalary = maxSalary;
+    }
+
+    public Integer getYearExperience() {
+        return yearExperience;
+    }
+
+    public JobPost yearExperience(Integer yearExperience) {
+        this.yearExperience = yearExperience;
+        return this;
+    }
+
+    public void setYearExperience(Integer yearExperience) {
+        this.yearExperience = yearExperience;
+    }
+
+    public String getCertificateNeeded() {
+        return certificateNeeded;
+    }
+
+    public JobPost certificateNeeded(String certificateNeeded) {
+        this.certificateNeeded = certificateNeeded;
+        return this;
+    }
+
+    public void setCertificateNeeded(String certificateNeeded) {
+        this.certificateNeeded = certificateNeeded;
+    }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
@@ -252,11 +316,15 @@ public class JobPost implements Serializable {
             ", shortDescription='" + getShortDescription() + "'" +
             ", applicationUrl='" + getApplicationUrl() + "'" +
             ", location='" + getLocation() + "'" +
-            ", workinghours='" + getWorkinghours() + "'" +
+            ", workinghours=" + getWorkinghours() +
             ", jobType='" + getJobType() + "'" +
             ", requeredSkills='" + getRequeredSkills() + "'" +
             ", coverImage='" + getCoverImage() + "'" +
             ", description='" + getDescription() + "'" +
+            ", minSalary=" + getMinSalary() +
+            ", maxSalary=" + getMaxSalary() +
+            ", yearExperience=" + getYearExperience() +
+            ", certificateNeeded='" + getCertificateNeeded() + "'" +
             "}";
     }
 }

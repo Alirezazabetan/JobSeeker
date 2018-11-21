@@ -11,8 +11,10 @@ import { ITEMS_PER_PAGE } from 'app/shared';
 import { JobPostMySuffixService } from './job-post-my-suffix.service';
 
 @Component({
+    moduleId: module.id,
     selector: 'jhi-job-post-my-suffix',
-    templateUrl: './job-post-my-suffix.component.html'
+    templateUrl: './job-post-my-suffix.component.html',
+    styleUrls: ['../../assets/css/app.min.css', '../../assets/css/custom.css', '../../assets/css/thejobs.css']
 })
 export class JobPostMySuffixComponent implements OnInit, OnDestroy {
     currentAccount: any;
@@ -29,7 +31,7 @@ export class JobPostMySuffixComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
-
+    term: any[] = [];
     constructor(
         private jobPostService: JobPostMySuffixService,
         private parseLinks: JhiParseLinks,

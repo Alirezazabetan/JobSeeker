@@ -50,7 +50,7 @@
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.workinghours" for="field_workinghours">Workinghours</label>
-                    <input type="text" class="form-control" name="workinghours" id="field_workinghours"
+                    <input type="number" class="form-control" name="workinghours" id="field_workinghours"
                         [(ngModel)]="jobPost.workinghours" />
                 </div>
                 <div class="form-group">
@@ -72,6 +72,26 @@
                     <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.description" for="field_description">Description</label>
                     <input type="text" class="form-control" name="description" id="field_description"
                         [(ngModel)]="jobPost.description" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.minSalary" for="field_minSalary">Min Salary</label>
+                    <input type="number" class="form-control" name="minSalary" id="field_minSalary"
+                        [(ngModel)]="jobPost.minSalary" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.maxSalary" for="field_maxSalary">Max Salary</label>
+                    <input type="number" class="form-control" name="maxSalary" id="field_maxSalary"
+                        [(ngModel)]="jobPost.maxSalary" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.yearExperience" for="field_yearExperience">Year Experience</label>
+                    <input type="number" class="form-control" name="yearExperience" id="field_yearExperience"
+                        [(ngModel)]="jobPost.yearExperience" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.certificateNeeded" for="field_certificateNeeded">Certificate Needed</label>
+                    <input type="text" class="form-control" name="certificateNeeded" id="field_certificateNeeded"
+                        [(ngModel)]="jobPost.certificateNeeded" />
                 </div>
 
             </div>
