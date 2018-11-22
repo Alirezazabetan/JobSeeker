@@ -9,11 +9,15 @@ export interface IJobPostMySuffix {
     shortDescription?: string;
     applicationUrl?: string;
     location?: string;
-    workinghours?: string;
+    workinghours?: number;
     jobType?: string;
     requeredSkills?: string;
     coverImage?: string;
     description?: string;
+    minSalary?: number;
+    maxSalary?: number;
+    yearExperience?: number;
+    certificateNeeded?: string;
 }
 
 export class JobPostMySuffix implements IJobPostMySuffix {
@@ -26,10 +30,14 @@ export class JobPostMySuffix implements IJobPostMySuffix {
         public shortDescription?: string,
         public applicationUrl?: string,
         public location?: string,
-        public workinghours?: string,
+        public workinghours?: number,
         public jobType?: string,
         public requeredSkills?: string,
         public coverImage?: string,
-        public description?: string
+        public description?: string,
+        public minSalary?: number,
+        public maxSalary?: number,
+        public yearExperience?: number,
+        public certificateNeeded?: string
     ) {}
 }

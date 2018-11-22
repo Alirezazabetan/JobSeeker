@@ -11,6 +11,7 @@ import {
     jobPostRoute,
     jobPostPopupRoute
 } from './';
+import { JobFilterPipe } from 'app/job-filter.pipe';
 
 const ENTITY_STATES = [...jobPostRoute, ...jobPostPopupRoute];
 
@@ -21,7 +22,8 @@ const ENTITY_STATES = [...jobPostRoute, ...jobPostPopupRoute];
         JobPostMySuffixDetailComponent,
         JobPostMySuffixUpdateComponent,
         JobPostMySuffixDeleteDialogComponent,
-        JobPostMySuffixDeletePopupComponent
+        JobPostMySuffixDeletePopupComponent,
+        JobFilterPipe
     ],
     entryComponents: [
         JobPostMySuffixComponent,

@@ -27,7 +27,11 @@
             "jobType": "Job Type",
             "requeredSkills": "Requered Skills",
             "coverImage": "Cover Image",
-            "description": "Description"
+            "description": "Description",
+            "minSalary": "Min Salary",
+            "maxSalary": "Max Salary",
+            "yearExperience": "Year Experience",
+            "certificateNeeded": "Certificate Needed"
         }
     }
 }

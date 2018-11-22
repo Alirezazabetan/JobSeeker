@@ -68,7 +68,7 @@ class JobPostGatlingTest extends Simulation {
             .exec(http("Create new jobPost")
             .post("/api/job-posts")
             .headers(headers_http_authenticated)
-            .body(StringBody("""{"id":null, "title":"SAMPLE_TEXT", "company":"SAMPLE_TEXT", "startDate":"2020-01-01T00:00:00.000Z", "endDate":"2020-01-01T00:00:00.000Z", "shortDescription":"SAMPLE_TEXT", "applicationUrl":"SAMPLE_TEXT", "location":"SAMPLE_TEXT", "workinghours":"SAMPLE_TEXT", "jobType":"SAMPLE_TEXT", "requeredSkills":"SAMPLE_TEXT", "coverImage":"SAMPLE_TEXT", "description":"SAMPLE_TEXT"}""")).asJSON
+            .body(StringBody("""{"id":null, "title":"SAMPLE_TEXT", "company":"SAMPLE_TEXT", "startDate":"2020-01-01T00:00:00.000Z", "endDate":"2020-01-01T00:00:00.000Z", "shortDescription":"SAMPLE_TEXT", "applicationUrl":"SAMPLE_TEXT", "location":"SAMPLE_TEXT", "workinghours":"0", "jobType":"SAMPLE_TEXT", "requeredSkills":"SAMPLE_TEXT", "coverImage":"SAMPLE_TEXT", "description":"SAMPLE_TEXT", "minSalary":null, "maxSalary":null, "yearExperience":"0", "certificateNeeded":"SAMPLE_TEXT"}""")).asJSON
             .check(status.is(201))
             .check(headerRegex("Location", "(.*)").saveAs("new_jobPost_url"))).exitHereIfFailed
             .pause(10)

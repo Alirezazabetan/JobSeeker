@@ -8,7 +8,7 @@ entity Individual {
     address String,
     jobTitle String,
     shortDescription String,
-    webSite String,	
+    webSite String,
     socialURLs String, //map<SocialType,url>
     skills String, //list<Skill>
     educations String, //list<Education>
@@ -91,38 +91,42 @@ entity Organization{
 	positionHeld String,
 	associatedWith String,
 	startDate Instant,
-	endDate Instant, 
+	endDate Instant,
 	description String
 }
 
 entity Company{
-	name String, 
-	workTitle String, 
-	workDescription String, 
-	location String, 
-	startDate Instant, 
-	website String, 
-	tel Long, 
-	employerRange String, 
-	email String, 
-	about String, 
+	name String,
+	workTitle String,
+	workDescription String,
+	location String,
+	startDate Instant,
+	website String,
+	tel Long,
+	employerRange String,
+	email String,
+	about String,
 	socialNetworks String, //List<SocialNetwork>
 	vacancies String //list<JobPost>
 }
 
 entity JobPost{
-	title String,  
+	title String,
 	company String,
     startDate Instant,
 	endDate Instant,
-	shortDescription String, 
-	applicationUrl String, 
-	location String, 
-	workinghours  String, 
-	jobType String, 
+	shortDescription String,
+	applicationUrl String,
+	location String,
+	workinghours Integer,
+	jobType String,
 	requeredSkills String, //List<Skill>
-	coverImage String, 
-	description String 
+	coverImage String,
+	description String,
+	minSalary Long,
+	maxSalary Long,
+	yearExperience Integer,
+	certificateNeeded String
 }
 
 enum SocialNetwork{
@@ -139,6 +143,6 @@ paginate JobPost,Individual,Company with pagination
 
 dto * with mapstruct
 
-service all with serviceImpl 
+service all with serviceImpl
 
 angularSuffix * with mySuffix

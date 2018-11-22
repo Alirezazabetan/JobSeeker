@@ -7,8 +7,8 @@
             <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
             <div class="logo-wrapper">
-                <a class="logo" href="index.html"><img src="../../assets/img/logo.png" alt="logo"></a>
-                <a class="logo-alt" href="index.html"><img src="../../assets/img/logo-alt.png" alt="logo-alt"></a>
+                <a class="logo" href="index.html"><img src="../assets/img/logo.png" alt="logo"></a>
+                <a class="logo-alt" href="index.html"><img src="../assets/img/logo-alt.png" alt="logo-alt"></a>
             </div>
 
         </div>
@@ -82,7 +82,7 @@
 
 
 <!-- Page header -->
-<header class="page-header bg-img" style="background-image: url(../../assets/img/bg-banner1.jpg);">
+<header class="page-header bg-img" style="background-image: url(../assets/img/bg-banner1.jpg);">
     <div class="container page-name">
         <h1 class="text-center">Browse jobs</h1>
         <p class="lead text-center">Use following search box to find jobs that fits you better</p>
@@ -125,26 +125,22 @@
                         </div>
 
                         <div class="checkbox">
-                            <input #fTime type="checkbox" id="contract2" name="contract" (change)="fTime.checked ?
-                                   term.push('Full time') : term.splice(term.indexOf('Full time'), 1)">
-                            <label for="contract2" >Full-time <small>(354)</small></label>
+                            <input type="checkbox" id="contract2" name="contract">
+                            <label for="contract2">Full-time <small>(354)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #pTime type="checkbox" id="contract3" name="contract" (change)="pTime.checked ?
-                                   term.push('Part time') : term.splice(term.indexOf('Part time'), 1)">
+                            <input type="checkbox" id="contract3" name="contract">
                             <label for="contract3">Part-time <small>(284)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #internship type="checkbox" id="contract4" name="contract" (change)="internship.checked ?
-                                   term.push('Internship') : term.splice(term.indexOf('Internship'), 1)">
+                            <input type="checkbox" id="contract4" name="contract">
                             <label for="contract4">Internship <small>(169)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #freelance type="checkbox" id="contract5" name="contract" (change)="freelance.checked ?
-                                   term.push('Freelance') : term.splice(term.indexOf('Freelance'), 1)">
+                            <input type="checkbox" id="contract5" name="contract">
                             <label for="contract5">Freelance <small>(480)</small></label>
                         </div>
                     </div>
@@ -160,26 +156,22 @@
                         </div>
 
                         <div class="checkbox">
-                            <input #lowRateSalary type="checkbox" id="rate2" name="rate" (change)="lowRateSalary.checked ?
-                                   term.push('$0 - $50') : term.splice(term.indexOf('$0 - $50'), 1)">
+                            <input type="checkbox" id="rate2" name="rate">
                             <label for="rate2">$0 - $50 <small>(364)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #averageLowSalary type="checkbox" id="rate3" name="rate"  (change)="averageLowSalary.checked ?
-                                   term.push('$50 - $100') : term.splice(term.indexOf('$50 - $100'), 1)">
+                            <input type="checkbox" id="rate3" name="rate">
                             <label for="rate3">$50 - $100 <small>(684)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #averageHighSalary type="checkbox" id="rate4" name="rate"  (change)="averageHighSalary.checked ?
-                                   term.push('$100 - $200') : term.splice(term.indexOf('$100 - $200'), 1)">
+                            <input type="checkbox" id="rate4" name="rate">
                             <label for="rate4">$100 - $200 <small>(195)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #highSalary type="checkbox" id="rate5" name="rate"  (change)="averageHighSalary.checked ?
-                                   term.push('$200+') : term.splice(term.indexOf('$200+'), 1)">
+                            <input type="checkbox" id="rate5" name="rate">
                             <label for="rate5">$200+ <small>(39)</small></label>
                         </div>
                     </div>
@@ -195,26 +187,22 @@
                         </div>
 
                         <div class="checkbox">
-                            <input #associateDegree type="checkbox" id="degree2" name="degree" (change)="associateDegree.checked ?
-                                   term.push('Associate') : term.splice(term.indexOf('Associate'), 1)">
+                            <input type="checkbox" id="degree2" name="degree">
                             <label for="degree2">Associate degree <small>(216)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #bachelorDegree type="checkbox" id="degree3" name="degree" (change)="bachelorDegree.checked ?
-                                   term.push('Bachelor') : term.splice(term.indexOf('Bachelor'), 1)">
+                            <input type="checkbox" id="degree3" name="degree">
                             <label for="degree3">Bachelor's degree <small>(569)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #masterDegree type="checkbox" id="degree4" name="degree" (change)="masterDegree.checked ?
-                                   term.push('Master') : term.splice(term.indexOf('Master'), 1)">
+                            <input type="checkbox" id="degree4" name="degree">
                             <label for="degree4">Master's degree <small>(439)</small></label>
                         </div>
 
                         <div class="checkbox">
-                            <input #doctoralDegree type="checkbox" id="degree5" name="degree" (change)="doctoralDegree.checked ?
-                                   term.push('Doctoral') : term.splice(term.indexOf('Doctoral'), 1)">
+                            <input type="checkbox" id="degree5" name="degree">
                             <label for="degree5">Doctoral degree <small>(84)</small></label>
                         </div>
                     </div>
@@ -248,37 +236,192 @@
                 </div>
 
                 <!-- Job item -->
-                <div class="col-xs-12" *ngFor="let jobPost of jobPosts | jobFilter:term ; trackBy: trackId">
-                    <a class="item-block" [routerLink]="['/job-post-my-suffix', jobPost.id, 'view' ]">
+                <div class="col-xs-12">
+                    <a class="item-block" href="job-detail.html">
                         <header>
-                            <!--<img src="../../assets/img/logo-google.jpg" alt="">-->
-                            <img src={{jobPost.coverImage}} alt="">
+                            <img src="../assets/img/logo-google.jpg" alt="">
                             <div class="hgroup">
-                                <h4>{{jobPost.title}}</h4>
-                                <h5>Google <span class="label label-success">{{jobPost.jobType}}</span></h5>
+                                <h4>Senior front-end developer</h4>
+                                <h5>Google <span class="label label-success">Full-time</span></h5>
                             </div>
-                            <!--<time datetime="{{jobPost.startDate}}">{{jobPost.startDate}}</time>-->
+                            <time datetime="2016-03-10 20:00">34 min ago</time>
                         </header>
 
                         <div class="item-body">
-                            <p>{{jobPost.shortDescription}}</p>
+                            <p>A rapidly growing, well established marketing firm is looking for an experienced web developer for a full-time position. In this role, you will develop websites, apps, emails and other forms of digital electronic media, all while maintaining brand standards across design projects and other marketing communication materials.</p>
                         </div>
 
                         <footer>
                             <ul class="details cols-3">
                                 <li>
                                     <i class="fa fa-map-marker"></i>
-                                    <span>{{jobPost.location}}</span>
+                                    <span>Menlo Park, CA</span>
                                 </li>
 
                                 <li>
                                     <i class="fa fa-money"></i>
-                                    <span>${{jobPost.minSalary}} - ${{jobPost.maxSalary}} / year</span>
+                                    <span>$90,000 - $110,000 / year</span>
                                 </li>
 
                                 <li>
                                     <i class="fa fa-certificate"></i>
-                                    <span>{{jobPost.certificateNeeded}}</span>
+                                    <span>Master or Bachelor</span>
+                                </li>
+                            </ul>
+                        </footer>
+                    </a>
+                </div>
+                <!-- END Job item -->
+
+
+                <!-- Job item -->
+                <div class="col-xs-12">
+                    <a class="item-block" href="job-detail.html">
+                        <header>
+                            <img src="../assets/img/logo-linkedin.png" alt="">
+                            <div class="hgroup">
+                                <h4>Software Engineer (Entry or Senior)</h4>
+                                <h5>Linkedin <span class="label label-warning">Part-time</span></h5>
+                            </div>
+                            <time datetime="2016-03-10 20:00">8 hours ago</time>
+                        </header>
+
+                        <div class="item-body">
+                            <p>The Special Programs Department II is seeking to hire a Computer Scientist to augment our software development team. Members of the software development team are expected to follow established software engineering principles to methodically deliver mission application software.</p>
+                        </div>
+
+                        <footer>
+                            <ul class="details cols-3">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Livermore, CA</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-money"></i>
+                                    <span>$60,000 - $75,000 / year</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-certificate"></i>
+                                    <span>Master or Bachelor</span>
+                                </li>
+                            </ul>
+                        </footer>
+                    </a>
+                </div>
+                <!-- END Job item -->
+
+
+                <!-- Job item -->
+                <div class="col-xs-12">
+                    <a class="item-block" href="job-detail.html">
+                        <header>
+                            <img src="../assets/img/logo-envato.png" alt="">
+                            <div class="hgroup">
+                                <h4>Full Stack Web Developer</h4>
+                                <h5>Envato <span class="label label-info">Freelance</span></h5>
+                            </div>
+                            <time datetime="2016-03-10 20:00">2 days ago</time>
+                        </header>
+
+                        <div class="item-body">
+                            <p>We're seeing a driven, curious, passionate full-stack web developer to help change how people learn creative skills and effortlessly create the images they imagine. You’ll be part of a new rapid prototyping and development team helping to apply lean startup development methodologies and modern web technologies to shape the future of Creative Cloud.</p>
+                        </div>
+
+                        <footer>
+                            <ul class="details cols-3">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>San Francisco, CA</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-money"></i>
+                                    <span>$105,000 / year</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-certificate"></i>
+                                    <span>Master</span>
+                                </li>
+                            </ul>
+                        </footer>
+                    </a>
+                </div>
+                <!-- END Job item -->
+
+
+                <!-- Job item -->
+                <div class="col-xs-12">
+                    <a class="item-block" href="job-detail.html">
+                        <header>
+                            <img src="../assets/img/logo-facebook.png" alt="">
+                            <div class="hgroup">
+                                <h4>Web Applications Developer</h4>
+                                <h5>Facebook <span class="label label-danger">Internship</span></h5>
+                            </div>
+                            <time datetime="2016-03-10 20:00">Feb 26, 2016</time>
+                        </header>
+
+                        <div class="item-body">
+                            <p>Client needs a back-end Java developer who has worked mainly on Java, J2EE, Spring, Web Services, and other Java related technologies.</p>
+                        </div>
+
+                        <footer>
+                            <ul class="details cols-3">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Lexington, MA</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-money"></i>
+                                    <span>$130,000 - $150,000 / year</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-certificate"></i>
+                                    <span>Ph.D. or Master</span>
+                                </li>
+                            </ul>
+                        </footer>
+                    </a>
+                </div>
+                <!-- END Job item -->
+
+
+                <!-- Job item -->
+                <div class="col-xs-12">
+                    <a class="item-block" href="job-detail.html">
+                        <header>
+                            <img src="../assets/img/logo-microsoft.jpg" alt="">
+                            <div class="hgroup">
+                                <h4>Sr. SQL Server Developer</h4>
+                                <h5>Microsoft <span class="label label-success">Remote</span></h5>
+                            </div>
+                            <time datetime="2016-03-10 20:00">Feb 16, 2016</time>
+                        </header>
+
+                        <div class="item-body">
+                            <p>Understand and model complex business requirements into database schemas and work with existing databases in SQL and NOSQL data stores. Develop high performance stored procedures, triggers and other database level code to provide data services to other teams.</p>
+                        </div>
+
+                        <footer>
+                            <ul class="details cols-3">
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Palo Alto, CA</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-money"></i>
+                                    <span>$125,000 - $140,000 / year</span>
+                                </li>
+
+                                <li>
+                                    <i class="fa fa-certificate"></i>
+                                    <span>Ph.D. or Master</span>
                                 </li>
                             </ul>
                         </footer>
@@ -383,6 +526,6 @@
 <!-- END Back to top button -->
 
 <!-- Scripts -->
-<script src="../../assets/js/app.min.js"></script>
-<script src="../../assets/js/thejobs.js"></script>
-<script src="../../assets/js/custom.js"></script>
+<script src="../assets/js/app.min.js"></script>
+<script src="../assets/js/thejobs.js"></script>
+<script src="../assets/js/custom.js"></script>

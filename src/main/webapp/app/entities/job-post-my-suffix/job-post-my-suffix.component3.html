@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jobAngularApp.jobPost.home.title">Job Posts</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-job-post-my-suffix" [routerLink]="['/job-post-my-suffix/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="jobAngularApp.jobPost.home.createLabel">
+            Create new Job Post
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="jobPosts">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="title"><span jhiTranslate="jobAngularApp.jobPost.title">Title</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="company"><span jhiTranslate="jobAngularApp.jobPost.company">Company</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="startDate"><span jhiTranslate="jobAngularApp.jobPost.startDate">Start Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="endDate"><span jhiTranslate="jobAngularApp.jobPost.endDate">End Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="shortDescription"><span jhiTranslate="jobAngularApp.jobPost.shortDescription">Short Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="applicationUrl"><span jhiTranslate="jobAngularApp.jobPost.applicationUrl">Application Url</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="location"><span jhiTranslate="jobAngularApp.jobPost.location">Location</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="workinghours"><span jhiTranslate="jobAngularApp.jobPost.workinghours">Workinghours</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="jobType"><span jhiTranslate="jobAngularApp.jobPost.jobType">Job Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="requeredSkills"><span jhiTranslate="jobAngularApp.jobPost.requeredSkills">Requered Skills</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="coverImage"><span jhiTranslate="jobAngularApp.jobPost.coverImage">Cover Image</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="description"><span jhiTranslate="jobAngularApp.jobPost.description">Description</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="minSalary"><span jhiTranslate="jobAngularApp.jobPost.minSalary">Min Salary</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="maxSalary"><span jhiTranslate="jobAngularApp.jobPost.maxSalary">Max Salary</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="yearExperience"><span jhiTranslate="jobAngularApp.jobPost.yearExperience">Year Experience</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="certificateNeeded"><span jhiTranslate="jobAngularApp.jobPost.certificateNeeded">Certificate Needed</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let jobPost of jobPosts ;trackBy: trackId">
+                <td><a [routerLink]="['/job-post-my-suffix', jobPost.id, 'view' ]">{{jobPost.id}}</a></td>
+                <td>{{jobPost.title}}</td>
+                <td>{{jobPost.company}}</td>
+                <td>{{jobPost.startDate | date:'medium'}}</td>
+                <td>{{jobPost.endDate | date:'medium'}}</td>
+                <td>{{jobPost.shortDescription}}</td>
+                <td>{{jobPost.applicationUrl}}</td>
+                <td>{{jobPost.location}}</td>
+                <td>{{jobPost.workinghours}}</td>
+                <td>{{jobPost.jobType}}</td>
+                <td>{{jobPost.requeredSkills}}</td>
+                <td>{{jobPost.coverImage}}</td>
+                <td>{{jobPost.description}}</td>
+                <td>{{jobPost.minSalary}}</td>
+                <td>{{jobPost.maxSalary}}</td>
+                <td>{{jobPost.yearExperience}}</td>
+                <td>{{jobPost.certificateNeeded}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/job-post-my-suffix', jobPost.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/job-post-my-suffix', jobPost.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'job-post-my-suffix/'+ jobPost.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="jobPosts && jobPosts.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -31,7 +31,7 @@
         },
         {
             "fieldName": "workinghours",
-            "fieldType": "String"
+            "fieldType": "Integer"
         },
         {
             "fieldName": "jobType",
@@ -47,6 +47,22 @@
         },
         {
             "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "minSalary",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "maxSalary",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "yearExperience",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "certificateNeeded",
             "fieldType": "String"
         }
     ],
