@@ -10,7 +10,13 @@ import { JobPostMySuffixService } from './job-post-my-suffix.service';
 
 @Component({
     selector: 'jhi-job-post-my-suffix-update',
-    templateUrl: './job-post-my-suffix-update.component.html'
+    templateUrl: './job-post-my-suffix-update.component.html',
+    styleUrls: [
+        '../../assets/css/app.min.css',
+        '../../assets/css/custom.css',
+        '../../assets/css/thejobs.css',
+        '../../assets/vendors/summernote/summernote.css'
+    ]
 })
 export class JobPostMySuffixUpdateComponent implements OnInit {
     private _jobPost: IJobPostMySuffix;
