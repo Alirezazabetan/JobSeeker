@@ -7,6 +7,7 @@ import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IJobPostMySuffix } from 'app/shared/model/job-post-my-suffix.model';
 import { JobPostMySuffixService } from './job-post-my-suffix.service';
+import { NgxEditorModule } from 'ngx-editor';
 
 @Component({
     selector: 'jhi-job-post-my-suffix-update',

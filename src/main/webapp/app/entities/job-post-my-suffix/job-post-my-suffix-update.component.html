@@ -6,8 +6,8 @@
             <a class="navbar-toggle" href="#" data-toggle="offcanvas"><i class="ti-menu"></i></a>
 
             <div class="logo-wrapper">
-                <a class="logo" href="index.html"><img src="assets/img/logo.png" alt="logo"></a>
-                <a class="logo-alt" href="index.html"><img src="assets/img/logo-alt.png" alt="logo-alt"></a>
+                <a class="logo" href="index.html"><img src="../../assets/img/logo.png" alt="logo"></a>
+                <a class="logo-alt" href="index.html"><img src="../../assets/img/logo-alt.png" alt="logo-alt"></a>
             </div>
 
         </div>
@@ -18,7 +18,7 @@
 
             <div class="dropdown user-account">
                 <a class="dropdown-toggle" href="#" data-toggle="dropdown">
-                    <img src="assets/img/logo-envato.png" alt="avatar">
+                    <img src="../../assets/img/logo-envato.png" alt="avatar">
                 </a>
 
                 <ul class="dropdown-menu dropdown-menu-right">
@@ -211,6 +211,7 @@
                 <h2>Job detail</h2>
                 <p>Write about your company, job description, skills required, benefits, etc.</p>
             </header>
+            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
 
             <textarea class="summernote-editor"></textarea>
 
@@ -306,7 +307,7 @@
 <!-- END Back to top button -->
 
 <!-- Scripts -->
-<script src="assets/js/app.min.js"></script>
-<script src="assets/vendors/summernote/summernote.min.js"></script>
-<script src="assets/js/thejobs.js"></script>
-<script src="assets/js/custom.js"></script>
+<script src="../../assets/js/app.min.js"></script>
+<script src="../../assets/vendors/summernote/summernote.min.js"></script>
+<script src="../../assets/js/thejobs.js"></script>
+<script src="../../assets/js/custom.js"></script>
