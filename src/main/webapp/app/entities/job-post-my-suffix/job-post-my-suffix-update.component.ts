@@ -7,17 +7,11 @@ import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 
 import { IJobPostMySuffix } from 'app/shared/model/job-post-my-suffix.model';
 import { JobPostMySuffixService } from './job-post-my-suffix.service';
-import { NgxEditorModule } from 'ngx-editor';
 
 @Component({
     selector: 'jhi-job-post-my-suffix-update',
     templateUrl: './job-post-my-suffix-update.component.html',
-    styleUrls: [
-        '../../assets/css/app.min.css',
-        '../../assets/css/custom.css',
-        '../../assets/css/thejobs.css',
-        '../../assets/vendors/summernote/summernote.css'
-    ]
+    styleUrls: ['../../assets/css/app.min.css', '../../assets/css/custom.css', '../../assets/css/thejobs.css']
 })
 export class JobPostMySuffixUpdateComponent implements OnInit {
     private _jobPost: IJobPostMySuffix;

@@ -20,6 +20,8 @@ import { JobAngularEntityModule } from './entities/entity.module';
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 import { OriginHomeComponent } from './origin-home/origin-home.component';
 import { JobListComponent } from './job-list/job-list.component';
+import { NgxEditorModule } from 'ngx-editor';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
     imports: [
@@ -30,7 +32,9 @@ import { JobListComponent } from './job-list/job-list.component';
         JobAngularCoreModule,
         JobAngularHomeModule,
         JobAngularAccountModule,
-        JobAngularEntityModule
+        JobAngularEntityModule,
+        NgxEditorModule,
+        TooltipModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

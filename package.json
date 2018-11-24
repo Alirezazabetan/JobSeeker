@@ -21,6 +21,7 @@
     "@ng-bootstrap/ng-bootstrap": "2.0.0",
     "bootstrap": "4.0.0",
     "core-js": "2.5.3",
+    "font-awesome": "^4.7.0",
     "jquery": "3.3.1",
     "moment": "2.21.0",
     "ng-jhipster": "0.5.4",
@@ -39,6 +40,7 @@
   "devDependencies": {
     "@angular/cli": "^7.0.5",
     "@angular/compiler-cli": "6.0.0",
+    "@fortawesome/fontawesome-free": "^5.5.0",
     "@ngtools/webpack": "6.0.0",
     "@types/jest": "22.2.3",
     "@types/node": "9.4.7",

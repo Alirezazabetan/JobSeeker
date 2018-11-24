@@ -92,114 +92,119 @@
 </nav>
 <!-- END Navigation bar -->
 
-
-<!-- Page header -->
-<header class="page-header">
-    <div class="container page-name">
-        <h1 class="text-center">Add a new job</h1>
-        <p class="lead text-center">Create a new vacancy for your company and put it online.</p>
-    </div>
-
-    <div class="container">
-
-        <div class="row">
-            <div class="form-group col-xs-12 col-sm-6">
-                <input type="text" class="form-control input-lg" placeholder="Job title, e.g. Front-end developer">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6">
-                <select class="form-control selectpicker">
-                    <option>Select a company</option>
-                    <option>Google</option>
-                    <option>Microsoft</option>
-                    <option>Apple</option>
-                    <option>Facebook</option>
-                </select>
-                <a class="help-block" href="company-add.html">Add new company</a>
-            </div>
-
-            <div class="form-group col-xs-12">
-                <textarea class="form-control" rows="3" placeholder="Short description"></textarea>
-            </div>
-
-            <div class="form-group col-xs-12">
-                <input type="text" class="form-control" placeholder="Application URL">
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                    <input type="text" class="form-control" placeholder="Location, e.g. Melon Park, CA">
-                </div>
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
-                    <select class="form-control selectpicker">
-                        <option>Full time</option>
-                        <option>Part time</option>
-                        <option>Internship</option>
-                        <option>Freelance</option>
-                        <option>Remote</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-money"></i></span>
-                    <input type="text" class="form-control" placeholder="Salary">
-                </div>
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
-                    <input type="text" class="form-control" placeholder="Working hours, e.g. 40">
-                    <span class="input-group-addon">hours / week</span>
-                </div>
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-flask"></i></span>
-                    <input type="text" class="form-control" placeholder="Experience, e.g. 5">
-                    <span class="input-group-addon">Years</span>
-                </div>
-            </div>
-
-            <div class="form-group col-xs-12 col-sm-6 col-md-4">
-                <div class="input-group input-group-sm">
-                    <span class="input-group-addon"><i class="fa fa-certificate"></i></span>
-                    <select class="form-control selectpicker" multiple>
-                        <option>Postdoc</option>
-                        <option>Ph.D.</option>
-                        <option>Master</option>
-                        <option selected>Bachelor</option>
-                    </select>
-                </div>
-            </div>
-
-
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+    <!-- Page header -->
+    <header class="page-header">
+        <div class="container page-name">
+            <h1 class="text-center">Add a new job</h1>
+            <p class="lead text-center">Create a new vacancy for your company and put it online.</p>
         </div>
 
-        <div class="button-group">
-            <div class="action-buttons">
-                <div class="upload-button">
-                    <button class="btn btn-block btn-primary">Choose a cover image</button>
-                    <input id="cover_img_file" type="file">
+        <div class="container">
+
+            <div class="row">
+                <div class="form-group col-xs-12 col-sm-6">
+                    <label class="form-control-label" jhiTranslate="jobAngularApp.jobPost.title"
+                           for="field_title">Title</label>
+                    <input type="text" class="form-control input-lg" name="title" id="field_title"
+                           [(ngModel)]="jobPost.title" placeholder="Job title, e.g. Front-end developer">
+                    <!--<input type="text" class="form-control input-lg" placeholder="Job title, e.g. Front-end developer">-->
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6">
+                    <input type="text" class="form-control selectpicker" name="company" id="field_company"
+                           [(ngModel)]="jobPost.company" />
+                    <select class="form-control selectpicker" [(ngModel)]="company.name">
+                        <option>Select a company</option>
+                        <option>Google</option>
+                        <option>Microsoft</option>
+                        <option>Apple</option>
+                        <option>Facebook</option>
+                    </select>
+                    <a class="help-block" href="company-add.html">Add new company</a>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <textarea class="form-control" rows="3" placeholder="Short description"></textarea>
+                </div>
+
+                <div class="form-group col-xs-12">
+                    <input type="text" class="form-control" placeholder="Application URL">
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+                        <input type="text" class="form-control" placeholder="Location, e.g. Melon Park, CA">
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-briefcase"></i></span>
+                        <select class="form-control selectpicker">
+                            <option>Full time</option>
+                            <option>Part time</option>
+                            <option>Internship</option>
+                            <option>Freelance</option>
+                            <option>Remote</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-money"></i></span>
+                        <input type="text" class="form-control" placeholder="Salary">
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-clock-o"></i></span>
+                        <input type="text" class="form-control" placeholder="Working hours, e.g. 40">
+                        <span class="input-group-addon">hours / week</span>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-flask"></i></span>
+                        <input type="text" class="form-control" placeholder="Experience, e.g. 5">
+                        <span class="input-group-addon">Years</span>
+                    </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-6 col-md-4">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-addon"><i class="fa fa-certificate"></i></span>
+                        <select class="form-control selectpicker" multiple>
+                            <option>Postdoc</option>
+                            <option>Ph.D.</option>
+                            <option>Master</option>
+                            <option selected>Bachelor</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="button-group">
+                <div class="action-buttons">
+                    <div class="upload-button">
+                        <button class="btn btn-block btn-primary">Choose a cover image</button>
+                        <input id="cover_img_file" type="file">
+                    </div>
                 </div>
             </div>
+
         </div>
-
-    </div>
-</header>
-<!-- END Page header -->
+    </header>
+    <!-- END Page header -->
 
 
-<!-- Main container -->
-<main>
+    <!-- Main container -->
 
 
     <!-- Job detail -->
@@ -211,9 +216,8 @@
                 <h2>Job detail</h2>
                 <p>Write about your company, job description, skills required, benefits, etc.</p>
             </header>
-            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true" [(ngModel)]="htmlContent"></app-ngx-editor>
-
-            <textarea class="summernote-editor"></textarea>
+            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true"
+                            [(ngModel)]="htmlContent"></app-ngx-editor>
 
         </div>
     </section>
@@ -229,16 +233,19 @@
                 <p>Please review your information once more and press the below button to put your job online.</p>
             </header>
 
-            <p class="text-center"><button class="btn btn-success btn-xl btn-round">Submit your job</button></p>
+            <p class="text-center">
+                <button class="btn btn-success btn-xl btn-round">Submit your job</button>
+            </p>
 
         </div>
     </section>
+
+    <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+        <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+    </button>
     <!-- END Submit -->
-
-
-</main>
+</form>
 <!-- END Main container -->
-
 
 <!-- Site footer -->
 <footer class="site-footer">
@@ -248,7 +255,11 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <h6>About</h6>
-                <p class="text-justify">An employment website is a web site that deals specifically with employment or careers. Many employment websites are designed to allow employers to post job requirements for a position to be filled and are commonly known as job boards. Other employment sites offer employer reviews, career and job-search advice, and describe different job descriptions or employers. Through a job website a prospective employee can locate and fill out a job application.</p>
+                <p class="text-justify">An employment website is a web site that deals specifically with employment or
+                    careers. Many employment websites are designed to allow employers to post job requirements for a
+                    position to be filled and are commonly known as job boards. Other employment sites offer employer
+                    reviews, career and job-search advice, and describe different job descriptions or employers. Through
+                    a job website a prospective employee can locate and fill out a job application.</p>
             </div>
 
             <div class="col-xs-6 col-md-3">
@@ -282,7 +293,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-sm-6 col-xs-12">
-                <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a href="http://themeforest.net/user/shamsoft">ShaMSofT</a>.</p>
+                <p class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by <a
+                    href="http://themeforest.net/user/shamsoft">ShaMSofT</a>.</p>
             </div>
 
             <div class="col-md-4 col-sm-6 col-xs-12">
