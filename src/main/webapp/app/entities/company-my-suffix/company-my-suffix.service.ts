@@ -49,6 +49,13 @@ export class CompanyMySuffixService {
         return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
     }
 
+    getCompanyNames(req?: any): Observable<EntityArrayResponseType> {
+        const options = createRequestOption(req);
+        return this.http
+            .get<ICompanyMySuffix[]>(this.resourceUrl, { params: options, observe: 'response' })
+            .pipe(map((res: EntityArrayResponseType) => this.convertDateArrayFromServer(res)));
+    }
+
     private convertDateFromClient(company: ICompanyMySuffix): ICompanyMySuffix {
         const copy: ICompanyMySuffix = Object.assign({}, company, {
             startDate: company.startDate != null && company.startDate.isValid() ? company.startDate.toJSON() : null

@@ -13,6 +13,7 @@ import {
     jobPostPopupRoute
 } from './';
 import { JobFilterPipe } from 'app/job-filter.pipe';
+import { TypeaheadFocusComponent } from '../../typeahead-focus/typeahead-focus.component';
 
 const ENTITY_STATES = [...jobPostRoute, ...jobPostPopupRoute];
 
@@ -24,7 +25,8 @@ const ENTITY_STATES = [...jobPostRoute, ...jobPostPopupRoute];
         JobPostMySuffixUpdateComponent,
         JobPostMySuffixDeleteDialogComponent,
         JobPostMySuffixDeletePopupComponent,
-        JobFilterPipe
+        JobFilterPipe,
+        TypeaheadFocusComponent
     ],
     entryComponents: [
         JobPostMySuffixComponent,

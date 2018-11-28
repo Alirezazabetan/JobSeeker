@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 
+import java.util.List;
 import java.util.Optional;
 /**
  * Service Implementation for managing Company.
@@ -56,6 +57,12 @@ public class CompanyServiceImpl implements CompanyService {
         log.debug("Request to get all Companies");
         return companyRepository.findAll(pageable)
             .map(companyMapper::toDto);
+    }
+
+    @Override
+    public List<Company> allCompanyName() {
+        log.debug("Request to get all Companies");
+        return companyRepository.getNames();
     }
 
 

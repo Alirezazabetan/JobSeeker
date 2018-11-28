@@ -111,16 +111,18 @@
                     <!--<input type="text" class="form-control input-lg" placeholder="Job title, e.g. Front-end developer">-->
                 </div>
 
+
                 <div class="form-group col-xs-12 col-sm-6">
                     <input type="text" class="form-control selectpicker" name="company" id="field_company"
                            [(ngModel)]="jobPost.company" />
-                    <select class="form-control selectpicker" [(ngModel)]="company.name">
-                        <option>Select a company</option>
-                        <option>Google</option>
-                        <option>Microsoft</option>
-                        <option>Apple</option>
-                        <option>Facebook</option>
-                    </select>
+                    <jhi-typeahead-focus></jhi-typeahead-focus>
+                    <!--<select class="form-control selectpicker" [(ngModel)]="company.name">-->
+                        <!--<option>Select a company</option>-->
+                        <!--<option>Google</option>-->
+                        <!--<option>Microsoft</option>-->
+                        <!--<option>Apple</option>-->
+                        <!--<option>Facebook</option>-->
+                    <!--</select>-->
                     <a class="help-block" href="company-add.html">Add new company</a>
                 </div>
 
@@ -216,7 +218,7 @@
                 <h2>Job detail</h2>
                 <p>Write about your company, job description, skills required, benefits, etc.</p>
             </header>
-            <app-ngx-editor [placeholder]="'Enter text here...'" [spellcheck]="true"
+            <app-ngx-editor name="htmlContact" [placeholder]="'Enter text here...'" [spellcheck]="true"
                             [(ngModel)]="htmlContent"></app-ngx-editor>
 
         </div>

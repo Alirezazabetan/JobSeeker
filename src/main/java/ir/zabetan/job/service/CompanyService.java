@@ -1,10 +1,12 @@
 package ir.zabetan.job.service;
 
+import ir.zabetan.job.domain.Company;
 import ir.zabetan.job.service.dto.CompanyDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +45,6 @@ public interface CompanyService {
      * @param id the id of the entity
      */
     void delete(String id);
+
+    List<Company> allCompanyName();
 }
