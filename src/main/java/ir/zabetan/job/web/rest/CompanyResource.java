@@ -1,6 +1,7 @@
 package ir.zabetan.job.web.rest;
 
 import com.codahale.metrics.annotation.Timed;
+import ir.zabetan.job.domain.Company;
 import ir.zabetan.job.service.CompanyService;
 import ir.zabetan.job.web.rest.errors.BadRequestAlertException;
 import ir.zabetan.job.web.rest.util.HeaderUtil;
@@ -94,6 +95,15 @@ public class CompanyResource {
         Page<CompanyDTO> page = companyService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/companies");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/companies/names")
+    @Timed
+    public ResponseEntity<List<String>> getAllCompaniesName() {
+        log.debug("REST request to get all of Companies name");
+        List<Company> result = companyService.allCompanyName();
+        return new ResponseEntity(result, HttpHeaders.EMPTY, HttpStatus.OK);
+//        return new ResponseUtil.wrapOrNotFound(result);
     }
 
     /**

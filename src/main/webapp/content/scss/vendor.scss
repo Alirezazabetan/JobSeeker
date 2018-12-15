@@ -7,7 +7,9 @@ eg $input-color: red;
 // Override Boostrap variables
 @import 'bootstrap-variables';
 // Import Bootstrap source files from node_modules
+
 @import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/css/font-awesome.css';
 @import 'src/main/webapp/content/scss/rtl.scss';
 
 /* jhipster-needle-scss-add-vendor JHipster will add new css style */

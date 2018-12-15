@@ -4,6 +4,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 body {
+    background: red !important;
     margin: 0;
 }
 article,

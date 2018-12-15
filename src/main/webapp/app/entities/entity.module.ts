@@ -13,6 +13,8 @@ import { JobAngularLanguageMySuffixModule } from './language-my-suffix/language-
 import { JobAngularOrganizationMySuffixModule } from './organization-my-suffix/organization-my-suffix.module';
 import { JobAngularCompanyMySuffixModule } from './company-my-suffix/company-my-suffix.module';
 import { JobAngularJobPostMySuffixModule } from './job-post-my-suffix/job-post-my-suffix.module';
+import { JobAngularTypeAheadFocusModule } from '../typeahead-focus/typeahead-focus.module';
+
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
 @NgModule({
@@ -31,6 +33,7 @@ import { JobAngularJobPostMySuffixModule } from './job-post-my-suffix/job-post-m
         JobAngularOrganizationMySuffixModule,
         JobAngularCompanyMySuffixModule,
         JobAngularJobPostMySuffixModule,
+        JobAngularTypeAheadFocusModule
         /* jhipster-needle-add-entity-module - JHipster will add entity modules here */
     ],
     declarations: [],
