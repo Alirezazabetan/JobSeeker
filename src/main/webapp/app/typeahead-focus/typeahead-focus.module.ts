@@ -3,15 +3,15 @@ import { RouterModule } from '@angular/router';
 
 import { JobAngularSharedModule } from 'app/shared';
 
-import { CompanyMySuffixComponent, companyPopupRoute, companyRoute } from '../entities/company-my-suffix';
+// import { CompanyMySuffixComponent, companyPopupRoute, companyRoute } from '../entities/company-my-suffix';
 import { JobFilterPipe } from 'app/job-filter.pipe';
 
-const ENTITY_STATES = [...companyRoute, ...companyPopupRoute];
+// const ENTITY_STATES = [...companyRoute, ...companyPopupRoute];
 
 @NgModule({
-    imports: [JobAngularSharedModule, RouterModule.forChild(ENTITY_STATES)],
-    declarations: [CompanyMySuffixComponent, JobFilterPipe],
-    entryComponents: [CompanyMySuffixComponent],
+    // imports: [JobAngularSharedModule, RouterModule.forChild(ENTITY_STATES)],
+    // declarations: [CompanyMySuffixComponent, JobFilterPipe],
+    // entryComponents: [CompanyMySuffixComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JobAngularTypeAheadFocusModule {}
