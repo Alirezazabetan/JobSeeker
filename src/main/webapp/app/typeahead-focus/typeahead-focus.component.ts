@@ -94,6 +94,11 @@ export class TypeaheadFocusComponent {
     predicate: any;
     previousPage: any;
     reverse: any;
+
+    @ViewChild('instance') instance: NgbTypeahead;
+    focus$ = new Subject<string>();
+    click$ = new Subject<string>();
+
     constructor(
         private jobPostService: JobPostMySuffixService,
         private parseLinks: JhiParseLinks,
@@ -112,10 +117,6 @@ export class TypeaheadFocusComponent {
         });
     }
 
-    @ViewChild('instance') instance: NgbTypeahead;
-    focus$ = new Subject<string>();
-    click$ = new Subject<string>();
-
     loadAll() {
         this.jobPostService
             .query({
@@ -123,13 +124,13 @@ export class TypeaheadFocusComponent {
                 size: this.itemsPerPage,
                 sort: this.sort()
             })
-            .subscribe(
-                (res: HttpResponse<IJobPostMySuffix[]>) => this.paginateJobPosts(res.body, res.headers),
-                (res: HttpErrorResponse) => this.onError(res.message)
-            );
+            .subscribe
+            /*                (res: HttpResponse<IJobPostMySuffix[]>) => this.paginateJobPosts(res.body, res.headers),
+                (res: HttpErrorResponse) => this.onError(res.message)*/
+            ();
     }
 
-    search = (text$: Observable<string>) => {
+    search(text$: Observable<string>) {
         const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
         const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance.isPopupOpen()));
         const inputFocus$ = this.focus$;
@@ -137,5 +138,9 @@ export class TypeaheadFocusComponent {
         return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
             map(term => (term === '' ? states : states.filter(v => v.toLowerCase().indexOf(term.toLowerCase()) > -1)).slice(0, 10))
         );
-    };
+    }
+
+    sort() {
+        return 'null';
+    }
 }
