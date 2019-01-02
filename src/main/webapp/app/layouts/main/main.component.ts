@@ -5,7 +5,18 @@ import { JhiLanguageHelper } from 'app/core';
 
 @Component({
     selector: 'jhi-main',
-    templateUrl: './main.component.html'
+    templateUrl: './main.component.html',
+    styles: [
+        `
+        .jh-card {
+            padding: 0;
+        }
+        .container-fluid {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    `
+    ]
 })
 export class JhiMainComponent implements OnInit {
     constructor(private jhiLanguageHelper: JhiLanguageHelper, private router: Router) {}
