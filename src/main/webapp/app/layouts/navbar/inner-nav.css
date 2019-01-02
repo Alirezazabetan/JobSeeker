@@ -178,28 +178,6 @@ svg:not(:root) {
     cursor: pointer;
 }
 
-.btn-primary {
-    color: #fff;
-    background-color: #3e8acc;
-    border-color: #3e8acc;
-}
-
-.btn-primary:hover {
-    color: #fff;
-    background-color: #3077b4;
-    border-color: #2d70aa;
-}
-
-.btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(62, 138, 204, 0.5);
-}
-
-.btn-primary:disabled {
-    color: #fff;
-    background-color: #3e8acc;
-    border-color: #3e8acc;
-}
-
 .btn-sm {
     padding: 0.25rem 0.5rem;
     font-size: 0.875rem;
@@ -406,9 +384,18 @@ ul ul {
 }
 
 .btn-primary {
+    background-color: #29aafe1c;
+    border-color: #29aafe5c;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(62, 138, 204, 0.5);
+}
+
+.btn-primary:disabled {
     color: #fff;
-    background-color: #337ab7;
-    border-color: #2e6da4;
+    background-color: #3e8acc;
+    border-color: #3e8acc;
 }
 
 .btn-primary:focus {
@@ -429,10 +416,6 @@ ul ul {
     color: #fff;
     background-color: #204d74;
     border-color: #122b40;
-}
-
-.btn-primary:active {
-    background-image: none;
 }
 
 .btn-sm {
@@ -548,11 +531,6 @@ ul ul {
     border-color: transparent;
     box-shadow: none;
     outline: none !important;
-}
-
-.btn-primary {
-    background-color: #29aafe;
-    border-color: #29aafe !important;
 }
 
 .btn-primary:hover,
