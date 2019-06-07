@@ -64,16 +64,24 @@
             <li>
                 <a class="active" href="index.html">Home</a>
                 <ul>
-                    <li><a class="active" href="index.html">Version 1</a></li>
-                    <li><a href="index-2.html">Version 2</a></li>
+                    <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
+                    <span>
+                        <fa-icon [icon]="'home'"></fa-icon>
+                        <span jhiTranslate="global.menu.home">Home</span>
+                    </span>
+                        </a>
+                    </li>
+                    <!--<li><a class="active" href="index.html">Version 1</a></li>-->
+                    <!--<li><a href="index-2.html">Version 2</a></li> #DUU-->
                 </ul>
             </li>
             <li>
                 <a href="#">Position</a>
                 <ul>
-                    <li><a href="job-list-1.html">Browse jobs - 1</a></li>
-                    <li><a href="job-list-2.html">Browse jobs - 2</a></li>
-                    <li><a href="job-list-3.html">Browse jobs - 3</a></li>
+                    <li><a href="job-list-1.html">Browse jobs</a></li>
+                    <!--<li><a href="job-list-2.html">Browse jobs - 2</a></li>-->
+                    <!--<li><a href="job-list-3.html">Browse jobs - 3</a></li>-->
                     <li><a href="job-detail.html">Job detail</a></li>
                     <li><a href="job-apply.html">Apply for job</a></li>
                     <li><a href="job-add.html">Post a job</a></li>

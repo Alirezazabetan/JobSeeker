@@ -4,6 +4,10 @@
         "browsehappy": "شما از مرورگر <strong>قدیمی</strong> استفاده می‌کنید. لطفا <a href=\"http://browsehappy.com/?locale=en\">مرورگر خود را به روز کنید</a>",
         "menu": {
             "home": "خانه",
+            "position": "موقعیت شغلی",
+            "resume": "رزومه",
+            "company": "شرکت",
+            "pages": "صفحات دیگر",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "ماهیت ها",
