@@ -68,7 +68,7 @@
     "lint-staged": "7.0.0",
     "merge-jsons-webpack-plugin": "1.0.14",
     "moment-locales-webpack-plugin": "1.0.5",
-    "node-sass": "4.9.0",
+    "node-sass": "7.0.0",
     "postcss-loader": "2.1.1",
     "prettier": "1.11.1",
     "proxy-middleware": "0.15.0",
